@@ -1,14 +1,16 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<title>Manuel RB</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="./styles/index.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <head>
+    <title>Manuel Rebollo Báez</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <noscript>
+        <link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
+
     <link rel="apple-touch-icon" sizes="76x76" href="./images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
@@ -18,210 +20,36 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
+<body class="is-preload">
+    <div id="wrapper">
+        <section id="main">
+            <header>
+                <h1>Manuel Rebollo Báez</h1>
+                <p>Android engineer @ Babylon Health</p>
+            </header>
+            <footer>
+                <ul class="icons">
+                    <li><a href="https://twitter.com/mrebollob" target="_blank"
+                            class="icon brands fa-twitter">Twitter</a></li>
 
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top">
-        <div class="w3-bar" id="myNavbar">
-            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
-                onclick="toggleFunction()" title="Toggle Navigation Menu">
-                <i class="fa fa-bars"></i>
-            </a>
-            <a href="#home" class="w3-bar-item w3-button">HOME</a>
-            <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-            <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
-        </div>
+                    <li><a href="https://github.com/mrebollob" target="_blank" class="icon brands fa-github">Github</a>
+                    </li>
 
-        <!-- Navbar on small screens -->
-        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-            <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-            <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-        </div>
+                    <li><a href="https://www.linkedin.com/in/mrebollob/" target="_blank"
+                            class="icon brands fa-linkedin">Linkedin</a></li>
+
+                    <li><a href="https://www.instagram.com/mrebollob/" target="_blank"
+                            class="icon brands fa-instagram">Instagram</a></li>
+                </ul>
+            </footer>
+        </section>
     </div>
-
-    <!-- First Parallax Image with Logo Text -->
-    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-        <div class="w3-display-middle" style="white-space:nowrap;">
-            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MANUEL REBOLLO BÁEZ</span>
-        </div>
-    </div>
-
-    <!-- Container (About Section) -->
-    <div class="w3-content w3-container w3-padding-64" id="about">
-        <h3 class="w3-center">Manuel Rebollo Báez</h3>
-        <p class="w3-center"><em>Android developer</em></p>
-        <p>I am passionate about technology that likes being always updated about the latest advances of software
-            development. In addition, I am a social person who loves to hold talks on wide variety of topics.
-            I also like sports and a healthy lifestyle. I currently practice rugby although I love to try all sports.
-            In the last years I have worked in companies and clients of different sectors to face problems of different
-            types. Thanks this I have a broad vision of development different types of mobile applications with which I
-            can analyze and design complete development this software type. I have learned work with environments of
-            continuous integration and automatic testing to achieve higher quality and reliability of software
-            developed.
-            <br />
-            <br />
-            My professional goal is continue grow as software developer by mastering the technologies that I know today
-            and learning new technologies. I also have a great interest in the practice of agile work methodologies for
-            improvement software development process.</p>
-
-        <div class="w3-xlarge w3-center">
-            <a href="https://twitter.com/mrebollob" target="_blank"> <i class="fa fa-twitter w3-hover-opacity"></i></a>
-            &nbsp;
-            <a href="https://github.com/mrebollob" target="_blank"> <i class="fa fa-github w3-hover-opacity"></i></a>
-            &nbsp;
-            <a href="https://www.linkedin.com/in/mrebollob/" target="_blank"> <i class="fa fa-linkedin w3-hover-opacity"></i></a>
-            &nbsp;
-            <a href="https://www.instagram.com/mrebollob/" target="_blank"> <i class="fa fa-instagram w3-hover-opacity"></i></a>
-        </div>
-
-        <div class="w3-row-padding w3-center w3-section">
-            <a href="./Manuel_Rebollo_Baez_Resume.pdf"> <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">My
-                    Resume (PDF)</button></a>
-        </div>
-    </div>
-
-    <!-- Second Parallax Image with Portfolio Text -->
-    <div class="bgimg-2 w3-display-container w3-opacity-min">
-        <div class="w3-display-middle">
-            <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
-        </div>
-    </div>
-
-    <!-- Container (Portfolio Section) -->
-    <div class="w3-content w3-container w3-padding-64" id="portfolio">
-        <h3 class="w3-center">MY WORK</h3>
-        <p class="w3-center"><em>Here are some of my latest personal projects.</em></p>
-        <br>
-
-        <!-- Grid -->
-        <div class="w3-row-padding">
-
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card-4 app-img">
-                    <img src="./images/leitner-box-app.png" alt="leitner box">
-                    <div class="w3-container">
-                        <h3 style="margin-bottom: 0;">Leitner Box</h3>
-                        <p class="w3-opacity" style="margin-top: 0;">Android app</p>
-                        <p>Simple leitner box calendar. Check it out on
-                            <a href="https://play.google.com/store/apps/details?id=com.mrebollob.leitnerbox" target="_blank"
-                                class="w3-hover-text-green">Google Play</a>
-                            and
-                            <a href="https://github.com/mrebollob/leitner-box" target="_blank" class="w3-hover-text-green">GitHub</a>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card-4 app-img">
-                    <img src="./images/loteria-app.png" alt="loteria navidad">
-                    <div class="w3-container">
-                        <h3 style="margin-bottom: 0;">Lotería de navidad 2015</h3>
-                        <p class="w3-opacity" style="margin-top: 0;">Android app</p>
-                        <p>Lottery app. Check it out on
-                            <a href="https://play.google.com/store/apps/details?id=com.mrb.loteriadenavidad" target="_blank"
-                                class="w3-hover-text-green">Google Play</a>
-                            and
-                            <a href="https://github.com/mrebollob/LoteriadeNavidad" target="_blank" class="w3-hover-text-green">GitHub</a>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card-4 app-img">
-                    <img src="./images/saldo-app.png" alt="saldo restaurante">
-                    <div class="w3-container">
-                        <h3 style="margin-bottom: 0;">Saldo Restaurant</h3>
-                        <p class="w3-opacity" style="margin-top: 0;">Android app</p>
-                        <p>Check your tarjeta restaurante balance. Check it out on
-                            <a href="https://play.google.com/store/apps/details?id=com.mrebollob.restaurant" target="_blank"
-                                class="w3-hover-text-green">Google Play</a>
-                            and
-                            <a href="https://github.com/mrebollob/RestaurantBalance" target="_blank" class="w3-hover-text-green">GitHub</a>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <p>Show <a href="https://play.google.com/store/apps/developer?id=MRB" title="Google Play apps" target="_blank"
-                class="w3-hover-text-green">Google Play apps</a></p>
-
-        <br>
-        <br>
-        <h3 class="w3-center">MY CONTRIBUTIONS</h3>
-        <p class="w3-center"><em>Contributions in open source projects.</em></p>
-        <br>
-
-        <!-- Grid -->
-        <div class="w3-row-padding">
-
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card-4 app-img">
-                    <img src="./images/applivery-logo.png" alt="applivery">
-                    <div class="w3-container">
-                        <h3 style="margin-bottom: 0;">Applivery</h3>
-                        <p class="w3-opacity" style="margin-top: 0;">Android sdk</p>
-                        <p><a href="https://www.applivery.com/" target="_blank" class="w3-hover-text-green">Applivery</a>
-                            &nbsp;sdk to manage your app internal builds and generate feedback reports.
-                            <br>Check it out on
-                            <a href="https://github.com/applivery/applivery-android-sdk" target="_blank" class="w3-hover-text-green">GitHub</a>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for full size images on click-->
-    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-            <img id="img01" class="w3-image">
-            <p id="caption" class="w3-opacity w3-large"></p>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-        <p>View <a href="https://github.com/mrebollob/mrebollob.com" title="GitHub Project" target="_blank" class="w3-hover-text-green">GitHub
-                Project</a></p>
-    </footer>
-
     <script>
-        // Modal Image Gallery
-        function onClick(element) {
-            document.getElementById("img01").src = element.src;
-            document.getElementById("modal01").style.display = "block";
-            var captionText = document.getElementById("caption");
-            captionText.innerHTML = element.alt;
-        }
-
-        // Change style of navbar on scroll
-        window.onscroll = function () {
-            myFunction()
-        };
-
-        function myFunction() {
-            var navbar = document.getElementById("myNavbar");
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-            } else {
-                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-            }
-        }
-
-        // Used to toggle the menu on small screens when clicking on the menu button
-        function toggleFunction() {
-            var x = document.getElementById("navDemo");
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
+        if ('addEventListener' in window) {
+            window.addEventListener('load', function () { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
         }
     </script>
-
 </body>
+
+</html>
