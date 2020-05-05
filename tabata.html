@@ -23,16 +23,14 @@
     img {
         margin-bottom: -8px;
     }
-
-    .mySlides {
-        display: none;
-    }
 </style>
 
 <body class="w3-content w3-black" style="max-width:1500px;">
 
     <!-- Header with Slideshow -->
     <header class="w3-display-container w3-center">
+        <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium"
+            onclick="navigateToPlayStore();">Download <i class="fa fa-android"></i></button>
         <div class="mySlides w3-animate-opacity">
             <img class="w3-image" src="./images/tabata/tabata_web_main.jpg" alt="Image 1" style="min-width:500px"
                 width="1500" height="1000">
@@ -98,25 +96,6 @@
     </footer>
 
     <script>
-        // Slideshow
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = x.length }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex - 1].style.display = "block";
-        }
-
         function navigateToPlayStore() {
             window.open('https://play.google.com/apps/testing/com.mrebollob.tabatatimer', '_blank');
             return false;
