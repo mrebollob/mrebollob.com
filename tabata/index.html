@@ -1,117 +1,96 @@
 <!DOCTYPE html>
 <html>
-<title>Tabata timer</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Tabata Timer" />
-<meta name="twitter:description" content="Super simple HIIT workout timer." />
-<meta name="twitter:image" content="https://mrebollob.com/tabata/assets/tabata_web_twitter_card.png" />
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="Description" content="Coach timer - your workout journal.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
 
-<link rel="stylesheet" href="./assets/css/w3.css">
-<link rel="stylesheet" href="./assets/css/tabata.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-        font-family: "Poppins", sans-serif
-    }
+    <title>Coach timer - your workout journal</title>
 
-    body {
-        font-size: 16px;
-    }
+    <!-- Styling -->
+    <link rel="stylesheet" type="text/css" href="styles/flexbox.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
 
-    img {
-        margin-bottom: -8px;
-    }
+    <link rel="canonical" href="https://mrebollob.com/tabata">
 
-    .mySlides {
-        display: "block";
-    }
-</style>
+    <base href="/">
 
-<body class="w3-content w3-black" style="max-width:1500px;">
+</head>
 
-    <!-- Header with Slideshow -->
-    <header class="w3-display-container w3-center">
-        <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium"
-            onclick="navigateToPlayStore();">Download <i class="fa fa-android"></i></button>
-        <div class="mySlides w3-animate-opacity">
-            <img class="tabata-image" src="./assets/tabata_web_main.jpg" alt="phone with the Tabata timer app image"
-                width="1500" height="1000">
-            <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
-                <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
-                    <h1 class="w3-xlarge">Tabata Timer HIIT</h1>
-                    <hr class="w3-opacity">
-                    <p>Super simple HIIT workout timer</p>
-                    <p><button class="w3-button w3-block w3-green w3-round" onclick="navigateToPlayStore();">Download <i
-                                class="fa fa-android"></i></button></p>
-                </div>
-            </div>
+<body>
+
+    <!-- HERO SECTION -->
+    <div class="fullwidth hero" id="hero" layout="row" layout-align="center center">
+
+        <div class="hero__background-decoration"></div>
+
+        <div class="fullwidth hero__header" layout="row" layout-align="start center" layout-align-sm="center center">
+            <h1 class="hero__logo-text">Tabata</h1>
         </div>
-    </header>
 
-    <!-- The App Section -->
-    <div class="w3-padding-64 w3-white">
-        <div class="w3-row-padding">
-            <div class="w3-col l8 m6">
-                <h1 class="w3-jumbo"><b>Tabata timer</b></h1>
-                <h1 class="w3-xxxlarge w3-text-green"><b>Your perfect HIIT timer</b></h1>
-                <p><span class="w3-xlarge">Workout like a pro.</span> Use this gym timer for training with weights,
+        <div class="fullwidth hero__inner" layout="row" layout-md="column" layout-align="center center"
+            layout-align-md="start center">
+
+            <div class="fullwidth hero__left-side" layout="column" layout-align="start start"
+                layout-align-md="start center">
+                <h1 class="hero__title">Workout like a pro</h1>
+                <p class="hero__subtitle">Use this gym timer for training with weights,
                     kettlebells, bodyweight exercises, crossfit, 7 minute workout, WOD, TRX, cardio exercises,
                     stretching, spinning, calisthenics, tabata, boot camp circuit workout training, or any other high
-                    intensity interval training.</p>
-                <button class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small"
-                    onclick="navigateToPlayStore();">
-                    <i class="fa fa-download"></i> Download Application
-                </button>
-                <p>Available for <i class="fa fa-android w3-xlarge w3-text-green"></i></p>
+                    intensity interval training.
+                </p>
+
+                <div class="fullwidth hero__div" layout="column" layout-align="start start"
+                    layout-align-md="start center" name="signupForm">
+
+                    <div fullwidth layout="row" layout-md="column" layout-align="start center">
+                        <a href="https://play.google.com/store/apps/details?id=com.mrebollob.tabatatimer"
+                            class="hero__download-now" >
+                            <div class="hero__download-btn-wrapper">
+                                <div class="hero__download-btn-shadow"></div>
+                                <div class="hero__download-btn" layout="row" layout-align="center center">
+                                    <img src="tabata/assets/google-play.png" alt="Google Play Download">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="w3-col l4 m6">
-                <img src="./assets/tabata_web_screenshot.png" class="tabata-image w3-right w3-hide-small" width="335"
-                    height="471">
+
+            <div class="fullwidth hero__right-side" layout="column" layout-align="center end"
+                layout-align-md="center center">
+                <img src="tabata/assets/tabata_screens.png" alt="Tabata Screens" class="hero__iphone" />
             </div>
+
         </div>
     </div>
 
-    <!-- Clarity Section -->
-    <div class="w3-padding-64 w3-light-grey">
-        <div class="w3-row-padding">
-            <div class="w3-col l4 m6">
-                <img class="tabata-image w3-round-large w3-hide-small w3-grayscale"
-                    src="./assets/tabata_web_training.jpg" alt="App" width="335" height="471">
+    <section class="fullwidth footer__container" id="footer" layout="row" layout-align="center center">
+        <div class="tabata__inner" layout="row" layout-sm="column" layout-align="start start"
+            layout-align-sm="start center">
+            <a class="footer__text hide--large hide--medium" href="mailto:hi@mrebollob.com">hi@mrebollob.com</a>
+            <a class="footer__text  hide--large hide--medium" href="tabata/privacy.html">privacy policy</a>
+            <a class="footer__text  hide--large hide--medium" href="tabata/terms.html">terms of
+                service</a>
+
+            <div class="fullwidth" layout="column" layout-align="start start" layout-align-sm="start center">
+                <p class="footer__text">Made with
+                    <span>☕️</span>in London
+                </p>
             </div>
-            <div class="w3-col l8 m6">
-                <h1 class="w3-jumbo"><b>Your next workout</b></h1>
-                <h1 class="w3-xxxlarge w3-text-red"><b>HIIT</b></h1>
-                <p><span class="w3-xlarge">High-intensity interval training (HIIT) is a form of interval training,
-                        a cardiovascular exercise strategy alternating short periods of intense anaerobic exercise with
-                        less intense recovery periods, until too exhausted to continue. Though there is no universal
-                        HIIT session duration, these intense workouts typically last under 30 minutes, with times
-                        varying based on a participant's current fitness level. The duration of HIIT also depends on
-                        the intensity of the session.</p>
-            </div>
+            <span flex></span>
+            <a class="footer__text hide--small" href="mailto:hi@mrebollob.com">hi@mrebollob.com</a>
+            <a class="footer__text hide--small" href="tabata/privacy.html" style="margin-left: 32px;">privacy</a>
+            <a class="footer__text hide--small" href="tabata/terms.html" style="margin-left: 32px;">terms</a>
         </div>
-    </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="w3-container w3-padding-32 w3-light-grey w3-center w3-xlarge">
-        <p class="w3-medium">Made with <i class="fa fa-heart"></i> by <a href="https://mrebollob.com/" target="_blank"
-                class="w3-hover-text-green">mrebollob</a></p>
-    </footer>
-
-    <script>
-        function navigateToPlayStore() {
-            window.open('https://play.google.com/store/apps/details?id=com.mrebollob.tabatatimer', '_blank');
-            return false;
-        }
-    </script>
 </body>
 
 </html>
