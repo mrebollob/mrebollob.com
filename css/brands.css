@@ -127,6 +127,14 @@ button:hover,
 .button.button-instagram:focus {
   filter: brightness(90%) }
 
+/* Mastodon */
+.button.button-mastodon {
+  color: #FFFFFF;
+  background-image: linear-gradient(-135deg,#563ACC,#6364FF) }
+.button.button-mastodon:hover,
+.button.button-mastodon:focus {
+  filter: brightness(90%) }
+
 /* Kit */
 .button.button-kit {
   color: #FFFFFF;
