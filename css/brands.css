@@ -263,3 +263,10 @@ button:hover,
 .button.button-youtube:focus {
   filter: brightness(90%) }
 
+/* Tiktok */
+.button.button-tiktok {
+  color: #FFFFFF;
+  background-image: linear-gradient(-135deg,#54BBBC,#020202,#020202,#020202,#020202,#BF1240) }
+.button.button-tiktok:hover,
+.button.button-tiktok:focus {
+  filter: brightness(90%) }
