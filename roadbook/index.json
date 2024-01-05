@@ -6,12 +6,12 @@
         "difficulty": "EASY",
         "lengthInM": 24840,
         "startingPoint": {
-            "lat": "37.267553",
-            "lon": "-5.940868"
+            "lat": 37.267553,
+            "lon": -5.940868
         },
         "createdAt": "2024-01-05T10:38:14.472Z",
         "updatedAt": "2024-01-05T10:38:14.472Z",
         "gpxFile": "test_route.gpx",
-        "roadBookFileUrl": "test_route.pdf"
+        "roadBookFile": "test_route.pdf"
     }
 ]
