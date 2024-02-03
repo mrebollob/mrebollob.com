@@ -17,8 +17,8 @@
     },
     {
         "id": "caserio-dehesa-de-abajo-almensilla-66161892",
-        "name": "Lugar Nuevo - Matachica",
-        "description": "The first route created for Marcos",
+        "name": "Caserío Dehesa de Abajo - Almensilla",
+        "description": "Second route created for Marcos.",
         "difficulty": "EASY",
         "type": "trail-bike",
         "lengthInM": 18190,
@@ -31,4 +31,5 @@
         "gpxFile": "caserio-dehesa-de-abajo-almensilla.gpx",
         "roadBookFile": null
     }
+    
 ]
