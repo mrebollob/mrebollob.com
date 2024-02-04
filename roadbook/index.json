@@ -30,6 +30,22 @@
         "updatedAt": "2024-02-03T10:38:14.472Z",
         "gpxFile": "caserio-dehesa-de-abajo-almensilla.gpx",
         "roadBookFile": "caserio-dehesa-de-abajo-almensilla.pdf"
+    },
+    {
+        "id": "dos-hermanas-utrera-114548684",
+        "name": "Dos Hermanas - Utrera",
+        "description": "Descubre una emocionante ruta de enduro desde Dos Hermanas hasta Utrera, con una distancia de 26.63 km y un desnivel moderado de 74 m. Disfruta de un recorrido técnico pero accesible, con un máximo de elevación de 48 m y un mínimo de 18 m. Sumérgete en paisajes impresionantes mientras desciendes 68 m en esta ruta de un solo sentido. Clasificada con un TrailRank de 8, esta experiencia promete emociones y diversión para los amantes del enduro.",
+        "difficulty": "MODERATE",
+        "type": "enduro",
+        "lengthInM": 26630,
+        "startingPoint": {
+            "lat": 37.277716,
+            "lon": -5.934626
+        },
+        "createdAt": "2024-02-04T10:38:14.472Z",
+        "updatedAt": "2024-02-04T10:38:14.472Z",
+        "gpxFile": "dos-hermanas-utrera.gpx",
+        "roadBookFile": null
     }
     
 ]
