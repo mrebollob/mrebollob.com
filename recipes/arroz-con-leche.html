@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arroz con Leche</title>
+    <link rel="stylesheet" href="css/recipes-styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="site-title">Arroz con Leche</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="images/arroz-con-leche.jpeg" alt="Arroz con Leche" class="recipe-image" />
+        </div>
+
+        <section class="ingredients">
+            <h2>Ingredientes</h2>
+            <ul>
+                <li>1 litro de leche entera</li>
+                <li>100 g de arroz redondo</li>
+                <li>75 g de azúcar</li>
+                <li>1 rama de canela</li>
+                <li>Una peladura de limón y una de naranja</li>
+                <li>40 g de mantequilla</li>
+                <li>Canela en polvo (opcional para decorar)</li>
+            </ul>
+        </section>
+
+        <section class="instructions">
+            <h2>Instrucciones</h2>
+            <ol>
+                <li>En una olla, añade el arroz, la leche con la rama de canela y el limón y la naranja.</li>
+                <li>Cocina a fuego lento, removiendo frecuentemente durante 45 minutos.</li>
+                <li>Retiramos el limon, la naranja y la canela.</li>
+                <li>Agrega el azúcar y cocina 20/30 minutos más, removiendo para evitar que se pegue.</li>
+                <li>Agrega la mantequilla.</li>
+                <li>Retiramos del fuego. Tiene que estar un poco liquido por que luego espesa mucho.</li>
+                <li>Llevamos a la nevera al menos 4 horas. Con film en la superficie para que no haga costra.</li>
+                <li>Espolvorea con canela para decorar.</li>
+            </ol>
+        </section>
+
+        <section class="references">
+            <h2>Referencias</h2>
+            <ul>
+                <li><a href="https://youtu.be/wMEpH76vqX4?si=CP4FjUp5j0zZMEBe&t=1003">Receta original</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-theme');
+        const themeIcon = document.getElementById('theme-icon');
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.classList.add(savedTheme);
+            themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('dark');
+            themeIcon.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeIcon.style.transform = 'rotate(360deg)';
+            setTimeout(() => {
+                themeIcon.style.transform = 'none';
+            }, 300);
+        });
+    </script>
+
+</body>
+
+</html>

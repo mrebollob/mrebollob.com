@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recetas</title>
+    <link rel="stylesheet" href="css/recipes-styles.css" />
+</head>
+
+<body>
+    <!-- Sticky Header with Dark Mode Toggle -->
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="site-title">🍽 Recetas</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Recetas</h1>
+
+        <section class="recipe-category">
+            <h2>Postres</h2>
+            <ul class="recipe-list">
+                <li><a href="arroz-con-leche.html">Arroz con Leche</a></li>
+                <li><a href="torrijas.html">Torrijas</a></li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-theme');
+        const themeIcon = document.getElementById('theme-icon');
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.classList.add(savedTheme);
+            themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('dark');
+            themeIcon.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeIcon.style.transform = 'rotate(360deg)';
+            setTimeout(() => {
+                themeIcon.style.transform = 'none';
+            }, 300);
+        });
+    </script>
+
+</body>
+
+</html>
