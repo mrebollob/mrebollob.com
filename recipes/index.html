@@ -25,33 +25,16 @@
         <section class="recipe-category">
             <h2>Postres</h2>
             <ul class="recipe-list">
-                <li><a href="arroz-con-leche.html">Arroz con Leche</a></li>
-                <li><a href="torrijas.html">Torrijas</a></li>
+                <li><a href="desserts/arroz-con-leche.html">Arroz con Leche</a></li>
+                <li><a href="desserts/tarta-de-queso.html">Tarta de queso</a></li>
+                <li><a href="desserts/tiramisu.html">Tiramisu</a></li>
+                <li><a href="desserts/torrijas.html">Torrijas</a></li>
             </ul>
         </section>
 
     </div>
 
-    <script>
-        const toggleBtn = document.getElementById('toggle-theme');
-        const themeIcon = document.getElementById('theme-icon');
-
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.body.classList.add(savedTheme);
-            themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-        }
-
-        toggleBtn.addEventListener('click', () => {
-            const isDark = document.body.classList.toggle('dark');
-            themeIcon.textContent = isDark ? '☀️' : '🌙';
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            themeIcon.style.transform = 'rotate(360deg)';
-            setTimeout(() => {
-                themeIcon.style.transform = 'none';
-            }, 300);
-        });
-    </script>
+    <script src="scripts/theme.js"></script>
 
 </body>
 

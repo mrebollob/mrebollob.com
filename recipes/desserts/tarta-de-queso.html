@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarta de queso</title>
+    <link rel="stylesheet" href="../css/recipes-styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-title">Tarta de queso</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="../images/tarta-de-queso.jpeg" alt="Tarta de queso" class="recipe-image" />
+        </div>
+
+        <section class="ingredients">
+            <h2>Ingredientes</h2>
+            <ul class="checklist" data-recipe="tarta-de-queso">
+                <li><label><input type="checkbox">1 kg de queso crema (puedes cambiar una parte por queso azul)</label>
+                </li>
+                <li><label><input type="checkbox">7 huevos</label></li>
+                <li><label><input type="checkbox">400 g de azúcar</label></li>
+                <li><label><input type="checkbox">1 cucharada de harina</label></li>
+                <li><label><input type="checkbox">200 ml de nata para montar</label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('tarta-de-queso')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <h2>Instrucciones</h2>
+            <ol>
+                <li>Calentar el horno a 220ºC.</li>
+                <li>Forrar un molde de 22 cm de diámetro con papel de horno humedecido.</li>
+                <li>Batir y mezclar todos los ingredientes: comenzar con los huevos y el azúcar, y seguir con el queso,
+                    la nata y la cucharada de harina.</li>
+                <li>Verter en el molde y hornear a 210ºC durante 40 min (es posible que te sobre masa).</li>
+                <li>Sacar la tarta del horno. Debe quedar temblorosa y cremosa. Después de un par de horas de reposo
+                    estará lista.</li>
+            </ol>
+        </section>
+
+        <section class="references">
+            <h2>Referencias</h2>
+            <ul>
+                <li><a href="https://elpais.com/gastronomia/el-comidista/2019/01/31/articulo/1548957322_347273.html">Receta
+                        original</a></li>
+            </ul>
+        </section>
+    </div>
+
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/checklist.js"></script>
+
+</body>
+
+</html>

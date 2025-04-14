@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Torrijas</title>
+    <link rel="stylesheet" href="../css/recipes-styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-title">Torrijas</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="../images/torrijas.jpeg" alt="Torrijas" class="recipe-image" />
+        </div>
+
+        <section class="ingredients">
+            <h2>Ingredientes</h2>
+            <ul class="checklist" data-recipe="torrijas">
+                <li><label><input type="checkbox">1 barra de pan del día anterior</li>
+                <li><label><input type="checkbox">600ml de leche mezclada con 400ml de nata para montar ó 1 litro de
+                        leche</li>
+                <li><label><input type="checkbox">2 cucharadas grandes de azúcar</li>
+                <li><label><input type="checkbox">1 rama de canela</li>
+                <li><label><input type="checkbox">3 huevos</li>
+                <li><label><input type="checkbox">Aceite de oliva o girasol para freír</li>
+                <li><label><input type="checkbox">Canela en polvo y azúcar para espolvorear</li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('torrijas')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <h2>Instrucciones</h2>
+            <ol>
+                <li>Calienta la leche con la canela y el azúcar hasta que empiece a humear. Deja enfriar.</li>
+                <li>Corta el pan en rebanadas de unos 2 cm de grosor.</li>
+                <li>Empapa el pan en la leche y deja que absorba bien. Al menos 2 horas dandole la vuelta cada 30
+                    minutos, aunque mejor toda la noche.</li>
+                <li>Pasa las rebanadas por huevo batido y fríelas en aceite caliente.</li>
+                <li>Escurre sobre papel absorbente o rejilla y espolvorea con azúcar y canela.</li>
+            </ol>
+        </section>
+
+        <section class="references">
+            <h2>Referencias</h2>
+            <ul>
+                <li><a href="https://youtu.be/wMEpH76vqX4?si=R7kvi45w5DJ4Xqgd&t=533">Receta original</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/checklist.js"></script>
+
+</body>
+
+</html>

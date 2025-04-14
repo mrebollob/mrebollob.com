@@ -217,3 +217,46 @@ body.dark .dark-mode-toggle {
 body.dark .recipe-list a {
     color: #ffc66d;
 }
+
+.checklist {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.checklist li {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.checklist input[type="checkbox"] {
+    margin-right: 0.6rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: #cd853f;
+}
+
+body.dark .checklist input[type="checkbox"] {
+    accent-color: #ffdead;
+}
+
+.clear-checklist {
+    background-color: #f5deb3;
+    border: none;
+    padding: 0.6rem 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.clear-checklist:hover {
+    background-color: #deb887;
+}
+
+body.dark .clear-checklist {
+    background-color: #444;
+    color: #fff;
+}

@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arroz con Leche</title>
-    <link rel="stylesheet" href="css/recipes-styles.css" />
+    <link rel="stylesheet" href="../css/recipes-styles.css" />
 </head>
 
 <body>
     <header class="main-header">
         <div class="header-content">
-            <a href="index.html" class="site-title">Arroz con Leche</a>
+            <a href="../index.html" class="site-title">Arroz con Leche</a>
             <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
                 <span id="theme-icon">🌙</span>
             </button>
@@ -20,20 +20,21 @@
 
     <div class="container">
         <div class="image-wrapper">
-            <img src="images/arroz-con-leche.jpeg" alt="Arroz con Leche" class="recipe-image" />
+            <img src="../images/arroz-con-leche.jpeg" alt="Arroz con Leche" class="recipe-image" />
         </div>
 
         <section class="ingredients">
             <h2>Ingredientes</h2>
-            <ul>
-                <li>1 litro de leche entera</li>
-                <li>100 g de arroz redondo</li>
-                <li>75 g de azúcar</li>
-                <li>1 rama de canela</li>
-                <li>Una peladura de limón y una de naranja</li>
-                <li>40 g de mantequilla</li>
-                <li>Canela en polvo (opcional para decorar)</li>
+            <ul class="checklist" data-recipe="arroz-con-leche">
+                <li><label><input type="checkbox">1 litro de leche entera</li>
+                <li><label><input type="checkbox">100 g de arroz redondo</label></li>
+                <li><label><input type="checkbox">75 g de azúcar</label></li>
+                <li><label><input type="checkbox">1 rama de canela</label></li>
+                <li><label><input type="checkbox">Una peladura de limón y una de naranja</label></li>
+                <li><label><input type="checkbox">40 g de mantequilla</label></li>
+                <li><label><input type="checkbox">Canela en polvo (opcional para decorar)</label></li>
             </ul>
+            <button class="clear-checklist" onclick="clearChecklist('arroz-con-leche')">Limpiar lista</button>
         </section>
 
         <section class="instructions">
@@ -58,26 +59,8 @@
         </section>
     </div>
 
-    <script>
-        const toggleBtn = document.getElementById('toggle-theme');
-        const themeIcon = document.getElementById('theme-icon');
-
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.body.classList.add(savedTheme);
-            themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-        }
-
-        toggleBtn.addEventListener('click', () => {
-            const isDark = document.body.classList.toggle('dark');
-            themeIcon.textContent = isDark ? '☀️' : '🌙';
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            themeIcon.style.transform = 'rotate(360deg)';
-            setTimeout(() => {
-                themeIcon.style.transform = 'none';
-            }, 300);
-        });
-    </script>
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/checklist.js"></script>
 
 </body>
 
