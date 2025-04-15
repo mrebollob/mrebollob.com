@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sopa de ajo</title>
+    <link rel="stylesheet" href="../css/recipes-styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-title">Sopa de ajo</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="../images/sopa-de-ajo.jpeg" alt="Sopa de ajo" class="recipe-image" />
+        </div>
+
+        <section class="ingredients">
+            <h2>Ingredientes</h2>
+            <ul class="checklist" data-recipe="sopa-de-ajo">
+                <li><label><input type="checkbox">Aceite de oliva</li>
+                <li><label><input type="checkbox">7 dientes de ajo</li>
+                <li><label><input type="checkbox">1 guindilla cayena</li>
+                <li><label><input type="checkbox">125g de pan del dia anterior</li>
+                <li><label><input type="checkbox">1 cucharada de pimuentón dulce</li>
+                <li><label><input type="checkbox">1 litro de caldo de pollo</li>
+                <li><label><input type="checkbox">1 huevo por persona</li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('sopa-de-ajo')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <h2>Instrucciones</h2>
+            <ol>
+                <li>Calienta aceite y dora bien los ajos.</li>
+                <li>Añade la guindilla y dorala.</li>
+                <li>Añade el pan picado y tuesta.</li>
+                <li>Añade el pimenton y tuesta.</li>
+                <li>Añade el caldo de pollo.</li>
+                <li>Hierve 20 minutos a fuego suave.</li>
+                <li>Añade sal y un poco de agua si está muy espeso.</li>
+                <li>Con unas barillas, desaz un poco la sopa.</li>
+                <li>Escalza un huevo por persona.</li>
+                <li>Sirve la sopa con el huevo encima.</li>
+            </ol>
+        </section>
+
+        <section class="references">
+            <h2>Referencias</h2>
+            <ul>
+                <li><a href="https://youtu.be/-1row0Pw8lg?si=xHCOoKu9snzE8P5A&t=96">Receta original</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/checklist.js"></script>
+
+</body>
+
+</html>

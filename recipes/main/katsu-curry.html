@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katsu Curry</title>
+    <link rel="stylesheet" href="../css/recipes-styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-title">Katsu Curry</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="../images/katsu-curry.jpeg" alt="Katsu Curry" class="recipe-image" />
+        </div>
+
+        <section class="ingredients">
+            <h2>Ingredientes</h2>
+            <ul class="checklist" data-recipe="katsu-curry">
+                <li><label><input type="checkbox">3 Cebollas dulces picadas</li>
+                <li><label><input type="checkbox">1 Manzana o 1 chorro de miel</li>
+                <li><label><input type="checkbox">3 cucharadas de ketchup</li>
+                <li><label><input type="checkbox">40g Harina</li>
+                <li><label><input type="checkbox">20g Curry polvo</li>
+                <li><label><input type="checkbox">60-70g mantequilla sin sal</li>
+                <li><label><input type="checkbox">Sal a ojo</li>
+                <li><label><input type="checkbox">30g salsa inglesa</li>
+                <li><label><input type="checkbox">20g soja</li>
+                <li><label><input type="checkbox">700-900g Caldo de pollo</li>
+                <li><label><input type="checkbox">Arroz basmati</li>
+                <li><label><input type="checkbox">Filetes de cerdo/pollo para empanar</li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('katsu-curry')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <h2>Instrucciones</h2>
+            <ol>
+                <li>Pochar cebolla a fuego fuerte regulando con agua para que no se queme y se oscurezca. Hasta que esté
+                    marrón caramelo.</li>
+                <li>Se echa la manzana rallada o se omite y se echa mil al final.</li>
+                <li>Se añaden 3 cucharadas de ketchup.</li>
+                <li>Se añade la mantequilla y se derrite.</li>
+                <li>Se añade la harina y el curry en polvo y se cocina 5 minutos.</li>
+                <li>Se añade el caldo 700-900g y se remueve mucho.</li>
+                <li>Se añade la salsa inglesa 30g y la soja 20g y se ajusta la sal.</li>
+                <li>Se añade la miel en caso de no haber usado la manzana.</li>
+                <li>Se tritura todo opcionalmente.</li>
+                <li>Se cocina el arroz.</li>
+                <li>Se empana la carne salada en harina huevo y pan y a freir.</li>
+            </ol>
+        </section>
+
+        <section class="references">
+            <h2>Referencias</h2>
+            <ul>
+                <li>Modificada por Carlos</li>
+                <li><a href="https://www.youtube.com/watch?v=jUJJcd3dbNY&t=485s&ab_channel=Diegodoal">Receta
+                        original</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/checklist.js"></script>
+
+</body>
+
+</html>

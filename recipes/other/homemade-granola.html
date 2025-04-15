@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homemade Granola</title>
+    <link rel="stylesheet" href="../css/recipes-styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-title">Homemade Granola</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="../images/homemade-granola.jpeg" alt="Homemade Granola" class="recipe-image" />
+        </div>
+
+        <section class="ingredients">
+            <h2>Ingredientes</h2>
+            <ul class="checklist" data-recipe="homemade-granola">
+                <li><label><input type="checkbox">3 cups of rolled oat</li>
+                <li><label><input type="checkbox">2 cup of coconut flakes</li>
+                <li><label><input type="checkbox">1/4 cup of sliced almonds</li>
+                <li><label><input type="checkbox">1/8 cup of chia seeds</li>
+                <li><label><input type="checkbox">1/8 cup of quinoa</li>
+                <li><label><input type="checkbox">1/4 cup of raisins</li>
+                <li><label><input type="checkbox">1/2 cup of coconut oil</li>
+                <li><label><input type="checkbox">1/2 cup of maple syrup</li>
+                <li><label><input type="checkbox">A few pinches of salt</li>
+                <li><label><input type="checkbox">Sprinkle of cinnamon</li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('homemade-granola')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <h2>Instrucciones</h2>
+            <ol>
+                <li>In a large bowl combine, the rolled oat, coconut flakes, almonds, chia seeds, and quinoa.</li>
+                <li>In a pot warm up the coconut oil, maple syrup, salt, and cinnamon. Once it is all melted, pour over
+                    your ingredients.</li>
+                <li>Toss your ingredients together until all the dry has been well coated in your coconut oil maple
+                    syrup mixture.</li>
+                <li>Spread out your oats on a sheet pan and place in the oven at 275 F (135 C) for 45 minutes. Check
+                    every
+                    20 minutes to give it a stir to make sure it is browning nicely and isn't burning.</li>
+                <li>Once it is done, wait for it to cool and toss in your raisins. Store in an air tight jar.</li>
+            </ol>
+        </section>
+
+        <section class="references">
+            <h2>Referencias</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/shorts/J9CFl6_dBB0">Receta original</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/checklist.js"></script>
+
+</body>
+
+</html>
