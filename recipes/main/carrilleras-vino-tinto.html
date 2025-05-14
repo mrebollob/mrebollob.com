@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrilleras de Cerdo al Vino Tinto</title>
+    <link rel="stylesheet" href="../css/recipes-styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-title">Carrilleras de Cerdo al Vino Tinto</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="../images/carrilleras-vino-tinto.jpeg" alt="Carrilleras de Cerdo al Vino Tinto"
+                class="recipe-image" />
+        </div>
+
+        <section class="ingredients">
+            <h2>Ingredientes</h2>
+            <ul class="checklist" data-recipe="carrilleras-vino-tinto">
+                <li><label><input type="checkbox">6 carrilleras de cerdo</label></li>
+                <li><label><input type="checkbox">1 cebolla</label></li>
+                <li><label><input type="checkbox">2 dientes de ajo</label></li>
+                <li><label><input type="checkbox">1 pimiento rojo</label></li>
+                <li><label><input type="checkbox">1 pimiento verde italiano</label></li>
+                <li><label><input type="checkbox">2 zanahorias</label></li>
+                <li><label><input type="checkbox">500 ml de vino tinto (de la mejor calidad posible)</label></li>
+                <li><label><input type="checkbox">500 ml de caldo de carne</label></li>
+                <li><label><input type="checkbox">Harina de trigo</label></li>
+                <li><label><input type="checkbox">Sal</label></li>
+                <li><label><input type="checkbox">Pimienta negra molida</label></li>
+                <li><label><input type="checkbox">Aceite de oliva virgen extra</label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('carrilleras-vino-tinto')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <h2>Instrucciones</h2>
+            <ol>
+                <li>Limpiar las carrilleras retirando cualquier resto de grasa o telillas. Salpimentar por ambos lados y
+                    enharinar, sacudiendo el exceso de harina.</li>
+                <li>En una olla a presión, calentar un poco de aceite de oliva virgen extra y dorar las carrilleras a
+                    fuego fuerte. Retirar y reservar.</li>
+                <li>Picar la cebolla, los ajos, los pimientos y las zanahorias. En la misma olla, añadir un poco más de
+                    aceite si es necesario y pochar las verduras durante 10 minutos.</li>
+                <li>Agregar el vino tinto y dejar reducir a fuego fuerte para que se evapore el alcohol.</li>
+                <li>Incorporar las carrilleras y el caldo de carne. Ajustar de sal y pimienta. Cocinar con la válvula en
+                    posición 2 durante 20 minutos.</li>
+                <li>Apagar el fuego y dejar que la presión se libere completamente antes de abrir la olla.</li>
+                <li>Retirar las carrilleras y triturar las verduras hasta obtener una salsa fina. Pasar por un colador
+                    si se desea una textura más suave.</li>
+                <li>Devolver la salsa a la olla y dar un último hervor para que espese si es necesario. Servir las
+                    carrilleras con la salsa por encima.</li>
+            </ol>
+        </section>
+
+        <section class="references">
+            <h2>Referencias</h2>
+            <ul>
+                <li><a
+                        href="https://www.directoalpaladar.com/recetas-de-carnes-y-aves/carrilleras-cerdo-al-vino-tinto-receta-para-impresionar-e-impresionarte">Receta
+                        original</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/checklist.js"></script>
+
+</body>
+
+</html>
