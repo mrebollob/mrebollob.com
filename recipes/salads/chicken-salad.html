@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ensalada de pollo clásica</title>
+    <link rel="stylesheet" href="../css/recipes-styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-title">Ensalada de pollo clásica</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="../images/ensalada-pollo.jpg" alt="Ensalada de pollo clásica" class="recipe-image" />
+        </div>
+
+        <section class="ingredients">
+            <h2>Ingredientes (4 raciones)</h2>
+            <ul class="checklist" data-recipe="ensalada-pollo">
+                <li><label><input type="checkbox">2 pechugas de pollo cocidas y desmenuzadas</label></li>
+                <li><label><input type="checkbox">½ taza de apio picado en cubitos pequeños</label></li>
+                <li><label><input type="checkbox">½ taza de cebolla morada o cebolleta picada fina</label></li>
+                <li><label><input type="checkbox">½ taza de mayonesa</label></li>
+                <li><label><input type="checkbox">1 cucharadita de mostaza Dijon (opcional)</label></li>
+                <li><label><input type="checkbox">1 cucharadita de jugo de limón o vinagre de manzana</label></li>
+                <li><label><input type="checkbox">Sal y pimienta al gusto</label></li>
+                <li><label><input type="checkbox">Opcional: ¼ taza de nueces o almendras picadas</label></li>
+                <li><label><input type="checkbox">Opcional: uvas partidas por la mitad o manzana en cubitos</label></li>
+                <li><label><input type="checkbox">Opcional: perejil o eneldo fresco picado</label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('ensalada-pollo')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <h2>Instrucciones</h2>
+            <ol>
+                <li>Cocina las pechugas de pollo hasta que estén bien hechas y déjalas enfriar. Desmenúzalas o córtalas
+                    en cubitos.</li>
+                <li>En un bol grande mezcla la mayonesa, la mostaza, el jugo de limón, sal y pimienta.</li>
+                <li>Añade el pollo, el apio y la cebolla. Mezcla bien hasta que todo quede integrado.</li>
+                <li>Incorpora, si quieres, las nueces, uvas o manzana para una versión más completa.</li>
+                <li>Refrigera al menos 30 minutos antes de servir: mejora mucho el sabor en frío.</li>
+            </ol>
+        </section>
+
+        <section class="references">
+            <h2>Cómo servirla</h2>
+            <ul>
+                <li>En pan de molde o brioche, como sándwich de chicken salad.</li>
+                <li>Sobre una cama de lechuga fresca.</li>
+                <li>Con crackers o tostadas, como dip.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/checklist.js"></script>
+
+</body>
+
+</html>
