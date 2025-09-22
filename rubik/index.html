@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>2x2x2 Rubik's Cube — Quick Finish Guide</title>
+    <style>
+        :root {
+            --bg: #0b0b0f;
+            --card: #111214;
+            --muted: #9aa0a6;
+            --accent: #f6d860;
+            --white: #ffffff
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: linear-gradient(180deg, #050506 0%, #0b0b0f 100%);
+            color: var(--white)
+        }
+
+        .wrap {
+            max-width: 880px;
+            margin: 36px auto;
+            padding: 24px
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 16px
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.6rem
+        }
+
+        p.lead {
+            margin: 6px 0 18px;
+            color: var(--muted)
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 18px;
+            margin: 14px 0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        code,
+        pre {
+            background: #0b0b0c;
+            padding: 6px 8px;
+            border-radius: 6px;
+            color: var(--accent);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace
+        }
+
+        pre {
+            white-space: pre-wrap
+        }
+
+        .alg {
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        button.copy {
+            margin-left: auto;
+            background: transparent;
+            border: 1px solid #222;
+            padding: 6px 10px;
+            border-radius: 8px;
+            color: var(--muted);
+            cursor: pointer
+        }
+
+        .cases {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .case {
+            flex: 1 1 180px;
+            background: #0d0d0f;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #151516
+        }
+
+        .hint {
+            color: var(--muted);
+            font-size: 0.95rem
+        }
+
+        footer {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 20px;
+            text-align: center
+        }
+
+        .small {
+            font-size: 0.9rem;
+            color: var(--muted)
+        }
+
+        .ascii {
+            font-family: monospace;
+            background: #060607;
+            padding: 10px;
+            border-radius: 6px
+        }
+
+        @media (max-width:520px) {
+            .cases {
+                flex-direction: column
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <rect x="1" y="1" width="22" height="22" rx="3" stroke="#2f2f2f" fill="#0e0e10" />
+                <g stroke="url(#g)" stroke-width="1.2">
+                    <path d="M4 7h4M4 11h4M4 15h4M9 7h4M9 11h4M9 15h4M14 7h4M14 11h4M14 15h4" />
+                </g>
+            </svg>
+            <div>
+                <h1>2x2x2 Rubik's Cube — Quick Finish Guide</h1>
+                <p class="lead">Short, practice-ready instructions to finish the last two steps: orient and permute the
+                    last layer. Keep the face you solved first on the bottom.</p>
+            </div>
+        </header>
+
+        <section class="card">
+            <h2>Before you start</h2>
+            <p class="hint">You should already have one face complete with its surrounding sides matching the colors
+                (this guide assumes that solved face stays at the <strong>bottom</strong> during the last steps).</p>
+        </section>
+
+        <section class="card">
+            <h2>Step 2 — Orient the last face (make the top all the same color)</h2>
+            <p class="small">Put the color you want to finish on top (e.g. yellow). Use the same short algorithm
+                repeatedly until the entire top face shows the same color.</p>
+            <div class="alg">
+                <code id="alg2">R U R' U R U2 R'</code>
+                <button class="copy" data-target="alg2">Copy</button>
+            </div>
+
+            <div style="margin-top:12px" class="cases">
+                <div class="case">
+                    <strong>Point (0 or 1 corner correct)</strong>
+                    <div class="ascii" style="margin-top:8px"> . .\n. X .\n . .</div>
+                    <p class="small">Apply <code>R U R' U R U2 R'</code> once → get an <strong>L</strong> or a line.</p>
+                </div>
+
+                <div class="case">
+                    <strong>L shape (2 corners correct — angle)</strong>
+                    <div class="ascii" style="margin-top:8px"> X .\n. .\n . X</div>
+                    <p class="small">Rotate the top so the L is at the top-left (relative to you), then apply the
+                        algorithm → becomes a line.</p>
+                </div>
+
+                <div class="case">
+                    <strong>Line (2 corners correct — row)</strong>
+                    <div class="ascii" style="margin-top:8px"> X X\n. .\n . .</div>
+                    <p class="small">Rotate the top so the line is horizontal. Apply the algorithm → the whole top will
+                        be the same color.</p>
+                </div>
+
+                <div class="case">
+                    <strong>Done</strong>
+                    <p class="small">If the top is already uniform, skip this step.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Step 3 — Permute (place) the corners</h2>
+            <p class="small">Now the top is all one color — only the positions of the corners may be wrong. Use the
+                algorithm below to swap corners without changing the solved faces.</p>
+
+            <div class="alg">
+                <code id="alg3">U R U' L' U R' U' L</code>
+                <button class="copy" data-target="alg3">Copy</button>
+            </div>
+
+            <div style="margin-top:12px" class="cases">
+                <div class="case">
+                    <strong>All corners correct</strong>
+                    <p class="small">Cube solved — congratulations! 🎉</p>
+                </div>
+                <div class="case">
+                    <strong>One corner in correct place</strong>
+                    <p class="small">Place that corner at the <em>front-right</em>. Then apply the algorithm. Repeat
+                        until solved.</p>
+                </div>
+                <div class="case">
+                    <strong>No corner correct</strong>
+                    <p class="small">Apply the algorithm once from any orientation — you will get at least one corner in
+                        place (then follow the "one corner" case).</p>
+                </div>
+            </div>
+
+            <p class="hint" style="margin-top:10px">Note: the algorithm cycles three corners and leaves one in place.
+                After each application, check which corner (if any) is correct and reposition accordingly.</p>
+        </section>
+
+        <section class="card">
+            <h2>Cheat sheet — Short summary</h2>
+            <pre>Step 2 (orient top): R U R' U R U2 R'
+Step 3 (permute corners): U R U' L' U R' U' L
+Keep solved face on the bottom. For step 2: Point → L → Line → Done. For step 3: put a correct corner at front-right, then run the algorithm.</pre>
+        </section>
+
+    </div>
+
+    <script>
+        // Copy buttons
+        document.querySelectorAll('button.copy').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const id = btn.getAttribute('data-target');
+                const text = document.getElementById(id).innerText;
+                try {
+                    await navigator.clipboard.writeText(text);
+                    btn.innerText = 'Copied!';
+                    setTimeout(() => btn.innerText = 'Copy', 900);
+                } catch (e) {
+                    alert('Copy failed — select and copy manually.');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
