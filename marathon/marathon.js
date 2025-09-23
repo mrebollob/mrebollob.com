@@ -1,5 +1,15 @@
 // Marathon Training Plan JavaScript
 
+// Save marathon date to localStorage
+function saveMarathonDate(date) {
+  localStorage.setItem('marathonDate', date);
+}
+
+// Load marathon date from localStorage
+function loadMarathonDate() {
+  return localStorage.getItem('marathonDate');
+}
+
 function updateDates() {
   const marathonDateInput = document.getElementById('marathon-date');
   const countdownInfo = document.getElementById('countdown-info');
@@ -62,13 +72,28 @@ function updateDates() {
 
 // Initialize page when loaded
 window.addEventListener('load', function() {
-  const today = new Date();
-  const defaultMarathonDate = new Date(today.getTime() + (18 * 7 * 24 * 60 * 60 * 1000));
   const marathonDateInput = document.getElementById('marathon-date');
-  marathonDateInput.value = defaultMarathonDate.toISOString().split('T')[0];
+  
+  // Try to load saved date from localStorage
+  const savedDate = loadMarathonDate();
+  
+  if (savedDate) {
+    // Use saved date if available
+    marathonDateInput.value = savedDate;
+  } else {
+    // Use default date (18 weeks from today) if no saved date
+    const today = new Date();
+    const defaultMarathonDate = new Date(today.getTime() + (18 * 7 * 24 * 60 * 60 * 1000));
+    marathonDateInput.value = defaultMarathonDate.toISOString().split('T')[0];
+  }
   
   // Add event listener for date changes
-  marathonDateInput.addEventListener('change', updateDates);
+  marathonDateInput.addEventListener('change', function() {
+    // Save the new date to localStorage
+    saveMarathonDate(marathonDateInput.value);
+    // Update the display
+    updateDates();
+  });
   
   // Initial update
   updateDates();
