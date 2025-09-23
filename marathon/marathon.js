@@ -46,13 +46,20 @@ function updateDates() {
     const weekStartDate = new Date(marathonDate);
 
     // Calculate the Monday of the training week
-    // Go back weeksToGo weeks from marathon date, then find the Monday of that week
-    weekStartDate.setDate(marathonDate.getDate() - (weeksToGo * 7));
+    if (weeksToGo === 0) {
+      // For race week (Week 0), find the Monday of the marathon week
+      const dayOfWeek = marathonDate.getDay();
+      const daysToSubtract = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // If Sunday, go back 6 days; otherwise go back (dayOfWeek - 1) days
+      weekStartDate.setDate(marathonDate.getDate() - daysToSubtract);
+    } else {
+      // Go back weeksToGo weeks from marathon date, then find the Monday of that week
+      weekStartDate.setDate(marathonDate.getDate() - (weeksToGo * 7));
 
-    // Adjust to get Monday of that week (0 = Sunday, 1 = Monday)
-    const dayOfWeek = weekStartDate.getDay();
-    const daysToSubtract = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // If Sunday, go back 6 days; otherwise go back (dayOfWeek - 1) days
-    weekStartDate.setDate(weekStartDate.getDate() - daysToSubtract);
+      // Adjust to get Monday of that week (0 = Sunday, 1 = Monday)
+      const dayOfWeek = weekStartDate.getDay();
+      const daysToSubtract = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // If Sunday, go back 6 days; otherwise go back (dayOfWeek - 1) days
+      weekStartDate.setDate(weekStartDate.getDate() - daysToSubtract);
+    }
 
     const options = { month: 'short', day: 'numeric' };
     cell.textContent = weekStartDate.toLocaleDateString('en-US', options);
