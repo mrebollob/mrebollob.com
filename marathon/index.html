@@ -20,9 +20,45 @@
                 <h1>Pfitzinger 18/55 Marathon Plan</h1>
 
                 <div class="date-input-section">
-                    <label for="marathon-date">Marathon Date:</label>
-                    <input type="date" id="marathon-date">
-                    <div id="countdown-info" style="margin-top: 10px; font-size: 14px;"></div>
+                    <div class="input-group">
+                        <label for="marathon-date">Marathon Date:</label>
+                        <input type="date" id="marathon-date">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="goal-time">Goal Time:</label>
+                        <input type="text" id="goal-time" placeholder="4:00:00" pattern="[0-9]:[0-5][0-9]:[0-5][0-9]" title="Format: H:MM:SS or HH:MM:SS">
+                    </div>
+                </div>
+                
+                <div id="countdown-info"></div>
+
+                <div id="pace-card" class="pace-display-card" style="display: none; margin-top: 20px; margin-bottom: 20px;">
+                    <h3>Goal Pace</h3>
+                    <div class="pace-info">
+                        <div class="pace-value">
+                            <span id="pace-per-mile">--:--</span>
+                            <span class="pace-unit">per mile</span>
+                        </div>
+                        <div class="pace-value">
+                            <span id="pace-per-km">--:--</span>
+                            <span class="pace-unit">per km</span>
+                        </div>
+                    </div>
+                    <div class="splits-info">
+                        <div class="split-time">
+                            <span class="split-label">5K:</span>
+                            <span id="split-5k">--:--</span>
+                        </div>
+                        <div class="split-time">
+                            <span class="split-label">10K:</span>
+                            <span id="split-10k">--:--</span>
+                        </div>
+                        <div class="split-time">
+                            <span class="split-label">Half:</span>
+                            <span id="split-half">--:--:--</span>
+                        </div>
+                    </div>
                 </div>
 
                 <p class="note">Distances shown as miles (km). Weeks count down to race day.</p>

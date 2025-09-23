@@ -106,10 +106,17 @@ h2 {
   margin-bottom: var(--space-2xl);
   box-shadow: var(--shadow);
   transition: all 0.2s ease;
+  display: flex;
+  gap: var(--space-xl);
+  align-items: flex-end;
 }
 
 .date-input-section:hover {
   box-shadow: var(--shadow-md);
+}
+
+.input-group {
+  flex: 1;
 }
 
 .date-input-section label {
@@ -142,9 +149,83 @@ h2 {
 
 #countdown-info {
   margin-top: var(--space);
+  margin-bottom: var(--space-xl);
   font-size: 0.875rem;
   color: var(--text-secondary);
   font-weight: 500;
+  text-align: center;
+}
+
+/* Pace display card */
+.pace-display-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+}
+
+.pace-display-card h3 {
+  margin: 0 0 var(--space-lg) 0;
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.pace-info {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-xl);
+}
+
+.pace-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pace-value span:first-child {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--space-xs);
+}
+
+.pace-unit {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.splits-info {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.split-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.split-label {
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+.split-time span:last-child {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 #countdown-info strong {
@@ -409,6 +490,16 @@ h2 {
 
   .date-input-section {
     padding: var(--space);
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .input-group {
+    margin-bottom: var(--space);
+  }
+  
+  .input-group:last-child {
+    margin-bottom: 0;
   }
 }
 

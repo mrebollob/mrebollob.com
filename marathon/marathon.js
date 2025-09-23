@@ -10,6 +10,83 @@ function loadMarathonDate() {
   return localStorage.getItem('marathonDate');
 }
 
+// Save goal time to localStorage
+function saveGoalTime(time) {
+  localStorage.setItem('goalTime', time);
+}
+
+// Load goal time from localStorage
+function loadGoalTime() {
+  return localStorage.getItem('goalTime');
+}
+
+// Parse time string (H:MM:SS or HH:MM:SS) to total seconds
+function parseTimeToSeconds(timeStr) {
+  if (!timeStr) return null;
+  
+  const parts = timeStr.split(':');
+  if (parts.length !== 3) return null;
+  
+  const hours = parseInt(parts[0]);
+  const minutes = parseInt(parts[1]);
+  const seconds = parseInt(parts[2]);
+  
+  if (isNaN(hours) || isNaN(minutes) || isNaN(seconds) || 
+      minutes >= 60 || seconds >= 60) return null;
+  
+  return hours * 3600 + minutes * 60 + seconds;
+}
+
+// Format seconds to time string (H:MM:SS or MM:SS)
+function formatSecondsToTime(totalSeconds, includeHours = false) {
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  
+  if (includeHours || hours > 0) {
+    return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  } else {
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  }
+}
+
+// Calculate and display pace information
+function updatePaceDisplay() {
+  const goalTimeInput = document.getElementById('goal-time');
+  const paceCard = document.getElementById('pace-card');
+  
+  if (!goalTimeInput.value) {
+    paceCard.style.display = 'none';
+    return;
+  }
+  
+  const totalSeconds = parseTimeToSeconds(goalTimeInput.value);
+  if (!totalSeconds) {
+    paceCard.style.display = 'none';
+    return;
+  }
+  
+  // Show the pace card
+  paceCard.style.display = 'block';
+  
+  // Calculate pace per mile (26.2 miles)
+  const pacePerMileSeconds = Math.round(totalSeconds / 26.2);
+  document.getElementById('pace-per-mile').textContent = formatSecondsToTime(pacePerMileSeconds);
+  
+  // Calculate pace per km (42.195 km)
+  const pacePerKmSeconds = Math.round(totalSeconds / 42.195);
+  document.getElementById('pace-per-km').textContent = formatSecondsToTime(pacePerKmSeconds);
+  
+  // Calculate split times
+  const split5k = Math.round(totalSeconds * (5 / 42.195));
+  const split10k = Math.round(totalSeconds * (10 / 42.195));
+  const splitHalf = Math.round(totalSeconds / 2);
+  
+  document.getElementById('split-5k').textContent = formatSecondsToTime(split5k);
+  document.getElementById('split-10k').textContent = formatSecondsToTime(split10k);
+  document.getElementById('split-half').textContent = formatSecondsToTime(splitHalf, true);
+}
+
 function updateDates() {
   const marathonDateInput = document.getElementById('marathon-date');
   const countdownInfo = document.getElementById('countdown-info');
@@ -83,9 +160,11 @@ function updateDates() {
 // Initialize page when loaded
 window.addEventListener('load', function () {
   const marathonDateInput = document.getElementById('marathon-date');
+  const goalTimeInput = document.getElementById('goal-time');
 
   // Try to load saved date from localStorage
   const savedDate = loadMarathonDate();
+  const savedGoalTime = loadGoalTime();
 
   if (savedDate) {
     // Use saved date if available
@@ -97,6 +176,11 @@ window.addEventListener('load', function () {
     marathonDateInput.value = defaultMarathonDate.toISOString().split('T')[0];
   }
 
+  if (savedGoalTime) {
+    // Use saved goal time if available
+    goalTimeInput.value = savedGoalTime;
+  }
+
   // Add event listener for date changes
   marathonDateInput.addEventListener('change', function () {
     // Save the new date to localStorage
@@ -105,6 +189,15 @@ window.addEventListener('load', function () {
     updateDates();
   });
 
-  // Initial update
+  // Add event listener for goal time changes
+  goalTimeInput.addEventListener('input', function () {
+    // Save the new goal time to localStorage
+    saveGoalTime(goalTimeInput.value);
+    // Update the pace display
+    updatePaceDisplay();
+  });
+
+  // Initial updates
   updateDates();
+  updatePaceDisplay();
 });
