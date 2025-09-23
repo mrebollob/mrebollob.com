@@ -1,0 +1,197 @@
+/* Marathon Training Plan Styles */
+
+:root {
+  --primary-blue: #4a90e2;
+  --secondary-green: #7ed321;
+  --accent-orange: #f5a623;
+  --warning-red: #d0021b;
+  --current-week: #bd10e0;
+  --recovery-week: #50e3c2;
+  --background-card: rgba(255,255,255,0.06);
+  --border-color: rgba(255,255,255,0.12);
+  --text-muted: rgba(255,255,255,0.7);
+}
+
+/* Page header styling */
+h1 {
+  color: var(--primary-blue);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Date input section */
+.date-input-section {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.date-input-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: white;
+}
+
+.date-input-section input {
+  padding: 12px 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.date-input-section input:focus {
+  outline: none;
+  border-color: white;
+  background: rgba(255,255,255,0.2);
+}
+
+#countdown-info {
+  margin-top: 12px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.9);
+}
+
+/* Table styling */
+table {
+  font-size: 14px;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 12px 10px;
+  vertical-align: top;
+}
+
+th {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+  color: white;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Training block captions */
+caption {
+  text-align: left;
+  font-weight: 700;
+  margin: 32px 0 12px;
+  font-size: 18px;
+  color: var(--primary-blue);
+}
+
+/* Training block specific colors */
+.block-1 caption { color: var(--primary-blue); }
+.block-2 caption { color: var(--secondary-green); }
+.block-3 caption { color: var(--accent-orange); }
+.block-4 caption { color: var(--warning-red); }
+
+/* Row styling */
+tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255,255,255,0.02);
+}
+
+tbody tr:hover {
+  background: rgba(74, 144, 226, 0.1);
+}
+
+/* Current week highlighting */
+.current-week {
+  background: linear-gradient(90deg, rgba(189, 16, 224, 0.2), rgba(189, 16, 224, 0.1)) !important;
+  border-left: 4px solid var(--current-week) !important;
+}
+
+.current-week td {
+  border-color: rgba(189, 16, 224, 0.3);
+}
+
+/* Recovery week styling */
+.recovery-week {
+  background: linear-gradient(90deg, rgba(80, 227, 194, 0.15), rgba(80, 227, 194, 0.05)) !important;
+}
+
+.recovery-week td:first-child {
+  color: var(--recovery-week);
+  font-weight: 600;
+}
+
+/* Week date column styling */
+.week-date {
+  font-weight: 600;
+  color: var(--accent-orange);
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Workout type styling */
+td:nth-child(3), td:nth-child(4), td:nth-child(5), 
+td:nth-child(6), td:nth-child(7), td:nth-child(8), td:nth-child(9) {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Rest days */
+td:contains("Rest") {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Weekly volume column */
+td:last-child {
+  font-weight: 600;
+  color: var(--secondary-green);
+  text-align: center;
+}
+
+/* Notes styling */
+.note {
+  opacity: 0.8;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2rem;
+  padding: 16px;
+  background: var(--background-card);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-blue);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  table {
+    font-size: 12px;
+  }
+  
+  th, td {
+    padding: 8px 6px;
+  }
+  
+  .date-input-section {
+    padding: 16px;
+  }
+  
+  caption {
+    font-size: 16px;
+  }
+}
+
+/* Training intensity indicators */
+.lt-workout { border-left: 3px solid var(--accent-orange); }
+.vo2-workout { border-left: 3px solid var(--warning-red); }
+.recovery-workout { border-left: 3px solid var(--recovery-week); }
+.long-run { border-left: 3px solid var(--secondary-green); }
