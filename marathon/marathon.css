@@ -129,7 +129,8 @@ h2 {
   letter-spacing: 0.05em;
 }
 
-.date-input-section input {
+.date-input-section input,
+.date-input-section select {
   width: 100%;
   padding: 0.75rem 1rem;
   border: 1px solid var(--border);
@@ -141,7 +142,8 @@ h2 {
   transition: all 0.2s ease;
 }
 
-.date-input-section input:focus {
+.date-input-section input:focus,
+.date-input-section select:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
@@ -226,6 +228,94 @@ h2 {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary);
+}
+
+/* Training paces card */
+.training-paces-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+}
+
+.training-paces-card h3 {
+  margin: 0 0 var(--space) 0;
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.training-paces-info {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  line-height: 1.5;
+}
+
+.training-paces-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.pace-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space);
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+}
+
+.pace-item:hover {
+  background: var(--bg-secondary);
+  transform: translateY(-1px);
+}
+
+.pace-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+  text-align: center;
+}
+
+.pace-times {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
+}
+
+.training-paces-note {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  text-align: center;
+  font-style: italic;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .training-paces-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space);
+  }
+  
+  .pace-item {
+    padding: var(--space-sm);
+  }
+  
+  .pace-times {
+    font-size: 0.875rem;
+  }
 }
 
 #countdown-info strong {

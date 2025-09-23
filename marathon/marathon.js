@@ -20,6 +20,16 @@ function loadGoalTime() {
   return localStorage.getItem('goalTime');
 }
 
+// Save unit preference to localStorage
+function saveUnitPreference(units) {
+  localStorage.setItem('unitPreference', units);
+}
+
+// Load unit preference from localStorage
+function loadUnitPreference() {
+  return localStorage.getItem('unitPreference') || 'miles';
+}
+
 // Parse time string (H:MM:SS or HH:MM:SS) to total seconds
 function parseTimeToSeconds(timeStr) {
   if (!timeStr) return null;
@@ -50,32 +60,146 @@ function formatSecondsToTime(totalSeconds, includeHours = false) {
   }
 }
 
+// Calculate training paces based on Pfitzinger recommendations
+function calculateTrainingPaces(marathonPaceSeconds) {
+  // All calculations based on Pfitzinger Advanced Marathoning 2nd Ed
+  
+  // Marathon pace (base pace)
+  const mp = { min: marathonPaceSeconds, max: marathonPaceSeconds };
+  
+  // General aerobic: 10-20% slower than marathon pace
+  const ga = { 
+    min: Math.round(mp.min * 1.10), // 10% slower (faster end)
+    max: Math.round(mp.min * 1.20)  // 20% slower (slower end)
+  };
+  
+  // LT (Lactate Threshold): 15-20 seconds per mile faster than marathon pace
+  const lt = { 
+    min: Math.round(mp.min - 20), // 20 seconds faster (faster end)
+    max: Math.round(mp.min - 15)  // 15 seconds faster (slower end)
+  };
+  
+  // Half marathon: ~10-15 seconds per mile faster than marathon pace
+  const hm = { 
+    min: Math.round(mp.min - 15), // 15 seconds faster (faster end)
+    max: Math.round(mp.min - 10)  // 10 seconds faster (slower end)
+  };
+  
+  // Recovery: 20-30% slower than marathon pace
+  const recovery = { 
+    min: Math.round(mp.min * 1.20), // 20% slower (faster end)
+    max: Math.round(mp.min * 1.30)  // 30% slower (slower end)
+  };
+  
+  // VO2 max: approximately 5K pace, ~30-40 seconds per mile faster than marathon pace
+  const vo2 = { 
+    min: Math.round(mp.min - 40), // 40 seconds faster (faster end)
+    max: Math.round(mp.min - 30)  // 30 seconds faster (slower end)
+  };
+  
+  // Med-long run: similar to general aerobic, maybe slightly faster (8-15% slower)
+  const medlong = { 
+    min: Math.round(mp.min * 1.08), // 8% slower (faster end)
+    max: Math.round(mp.min * 1.15)  // 15% slower (slower end)
+  };
+  
+  // Long run: 10-20% slower than marathon pace
+  const longrun = { 
+    min: Math.round(mp.min * 1.10), // 10% slower (faster end)
+    max: Math.round(mp.min * 1.20)  // 20% slower (slower end)
+  };
+  
+  return {
+    mp,
+    ga,
+    lt,
+    hm,
+    recovery,
+    vo2,
+    medlong,
+    longrun
+  };
+}
+
+// Update pace display based on unit preference
+function updatePaceValues(paceId, milePaceRange, kmPaceRange, unitPreference) {
+  const mileElement = document.getElementById(paceId + '-mile');
+  const kmElement = document.getElementById(paceId + '-km');
+  const container = mileElement.closest('.pace-times');
+  
+  if (unitPreference === 'miles') {
+    if (milePaceRange.min === milePaceRange.max) {
+      // Single pace (like marathon pace)
+      container.innerHTML = `<span id="${paceId}-mile">${formatSecondsToTime(milePaceRange.min)}</span>`;
+    } else {
+      // Range of paces
+      container.innerHTML = `<span id="${paceId}-mile">${formatSecondsToTime(milePaceRange.min)} - ${formatSecondsToTime(milePaceRange.max)}</span>`;
+    }
+  } else {
+    if (kmPaceRange.min === kmPaceRange.max) {
+      // Single pace (like marathon pace)
+      container.innerHTML = `<span id="${paceId}-km">${formatSecondsToTime(kmPaceRange.min)}</span>`;
+    } else {
+      // Range of paces
+      container.innerHTML = `<span id="${paceId}-km">${formatSecondsToTime(kmPaceRange.min)} - ${formatSecondsToTime(kmPaceRange.max)}</span>`;
+    }
+  }
+}
+
+// Update goal pace card display based on unit preference
+function updateGoalPaceDisplay(pacePerMileSeconds, pacePerKmSeconds, unitPreference) {
+  const paceInfo = document.querySelector('.pace-info');
+  
+  if (unitPreference === 'miles') {
+    paceInfo.innerHTML = `
+      <div class="pace-value">
+        <span id="pace-per-mile">${formatSecondsToTime(pacePerMileSeconds)}</span>
+        <span class="pace-unit">per mile</span>
+      </div>
+    `;
+  } else {
+    paceInfo.innerHTML = `
+      <div class="pace-value">
+        <span id="pace-per-km">${formatSecondsToTime(pacePerKmSeconds)}</span>
+        <span class="pace-unit">per km</span>
+      </div>
+    `;
+  }
+}
+
 // Calculate and display pace information
 function updatePaceDisplay() {
   const goalTimeInput = document.getElementById('goal-time');
+  const unitSelector = document.getElementById('unit-selector');
   const paceCard = document.getElementById('pace-card');
+  const trainingPacesCard = document.getElementById('training-paces-card');
   
   if (!goalTimeInput.value) {
     paceCard.style.display = 'none';
+    trainingPacesCard.style.display = 'none';
     return;
   }
   
   const totalSeconds = parseTimeToSeconds(goalTimeInput.value);
   if (!totalSeconds) {
     paceCard.style.display = 'none';
+    trainingPacesCard.style.display = 'none';
     return;
   }
   
-  // Show the pace card
+  // Show the cards
   paceCard.style.display = 'block';
+  trainingPacesCard.style.display = 'block';
+  
+  const unitPreference = unitSelector.value;
   
   // Calculate pace per mile (26.2 miles)
   const pacePerMileSeconds = Math.round(totalSeconds / 26.2);
-  document.getElementById('pace-per-mile').textContent = formatSecondsToTime(pacePerMileSeconds);
-  
   // Calculate pace per km (42.195 km)
   const pacePerKmSeconds = Math.round(totalSeconds / 42.195);
-  document.getElementById('pace-per-km').textContent = formatSecondsToTime(pacePerKmSeconds);
+  
+  // Update goal pace display
+  updateGoalPaceDisplay(pacePerMileSeconds, pacePerKmSeconds, unitPreference);
   
   // Calculate split times
   const split5k = Math.round(totalSeconds * (5 / 42.195));
@@ -85,6 +209,25 @@ function updatePaceDisplay() {
   document.getElementById('split-5k').textContent = formatSecondsToTime(split5k);
   document.getElementById('split-10k').textContent = formatSecondsToTime(split10k);
   document.getElementById('split-half').textContent = formatSecondsToTime(splitHalf, true);
+  
+  // Calculate training paces
+  const paces = calculateTrainingPaces(pacePerMileSeconds);
+  
+  // Convert mile pace ranges to km pace ranges
+  const convertToKmRange = (mileRange) => ({
+    min: Math.round(mileRange.min * 0.621371),
+    max: Math.round(mileRange.max * 0.621371)
+  });
+
+  // Update all training paces based on unit preference
+  updatePaceValues('mp', paces.mp, convertToKmRange(paces.mp), unitPreference);
+  updatePaceValues('ga', paces.ga, convertToKmRange(paces.ga), unitPreference);
+  updatePaceValues('lt', paces.lt, convertToKmRange(paces.lt), unitPreference);
+  updatePaceValues('hm', paces.hm, convertToKmRange(paces.hm), unitPreference);
+  updatePaceValues('recovery', paces.recovery, convertToKmRange(paces.recovery), unitPreference);
+  updatePaceValues('vo2', paces.vo2, convertToKmRange(paces.vo2), unitPreference);
+  updatePaceValues('medlong', paces.medlong, convertToKmRange(paces.medlong), unitPreference);
+  updatePaceValues('longrun', paces.longrun, convertToKmRange(paces.longrun), unitPreference);
 }
 
 function updateDates() {
@@ -161,10 +304,12 @@ function updateDates() {
 window.addEventListener('load', function () {
   const marathonDateInput = document.getElementById('marathon-date');
   const goalTimeInput = document.getElementById('goal-time');
+  const unitSelector = document.getElementById('unit-selector');
 
-  // Try to load saved date from localStorage
+  // Try to load saved values from localStorage
   const savedDate = loadMarathonDate();
   const savedGoalTime = loadGoalTime();
+  const savedUnitPreference = loadUnitPreference();
 
   if (savedDate) {
     // Use saved date if available
@@ -181,6 +326,9 @@ window.addEventListener('load', function () {
     goalTimeInput.value = savedGoalTime;
   }
 
+  // Set saved unit preference
+  unitSelector.value = savedUnitPreference;
+
   // Add event listener for date changes
   marathonDateInput.addEventListener('change', function () {
     // Save the new date to localStorage
@@ -193,6 +341,14 @@ window.addEventListener('load', function () {
   goalTimeInput.addEventListener('input', function () {
     // Save the new goal time to localStorage
     saveGoalTime(goalTimeInput.value);
+    // Update the pace display
+    updatePaceDisplay();
+  });
+
+  // Add event listener for unit selector changes
+  unitSelector.addEventListener('change', function () {
+    // Save the new unit preference to localStorage
+    saveUnitPreference(unitSelector.value);
     // Update the pace display
     updatePaceDisplay();
   });

@@ -29,6 +29,14 @@
                         <label for="goal-time">Goal Time:</label>
                         <input type="text" id="goal-time" placeholder="4:00:00" pattern="[0-9]:[0-5][0-9]:[0-5][0-9]" title="Format: H:MM:SS or HH:MM:SS">
                     </div>
+                    
+                    <div class="input-group">
+                        <label for="unit-selector">Units:</label>
+                        <select id="unit-selector">
+                            <option value="miles">Miles</option>
+                            <option value="km">Kilometers</option>
+                        </select>
+                    </div>
                 </div>
                 
                 <div id="countdown-info"></div>
@@ -59,6 +67,71 @@
                             <span id="split-half">--:--:--</span>
                         </div>
                     </div>
+                </div>
+
+                <div id="training-paces-card" class="training-paces-card" style="display: none; margin-bottom: 20px;">
+                    <h3>Training Paces</h3>
+                    <p class="training-paces-info">All paces will be calculated based on your goal marathon time and the recommendations in Pfitzinger Advanced Marathoning 2nd Ed</p>
+                    
+                    <div class="training-paces-grid">
+                        <div class="pace-item">
+                            <div class="pace-label">Marathon Pace</div>
+                            <div class="pace-times">
+                                <span id="mp-mile">--:--</span> / <span id="mp-km">--:--</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pace-item">
+                            <div class="pace-label">General Aerobic</div>
+                            <div class="pace-times">
+                                <span id="ga-mile">--:--</span> / <span id="ga-km">--:--</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pace-item">
+                            <div class="pace-label">LT</div>
+                            <div class="pace-times">
+                                <span id="lt-mile">--:--</span> / <span id="lt-km">--:--</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pace-item">
+                            <div class="pace-label">HM</div>
+                            <div class="pace-times">
+                                <span id="hm-mile">--:--</span> / <span id="hm-km">--:--</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pace-item">
+                            <div class="pace-label">Recovery</div>
+                            <div class="pace-times">
+                                <span id="recovery-mile">--:--</span> / <span id="recovery-km">--:--</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pace-item">
+                            <div class="pace-label">VO₂</div>
+                            <div class="pace-times">
+                                <span id="vo2-mile">--:--</span> / <span id="vo2-km">--:--</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pace-item">
+                            <div class="pace-label">Med-long Run</div>
+                            <div class="pace-times">
+                                <span id="medlong-mile">--:--</span> / <span id="medlong-km">--:--</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pace-item">
+                            <div class="pace-label">Long Run</div>
+                            <div class="pace-times">
+                                <span id="longrun-mile">--:--</span> / <span id="longrun-km">--:--</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="training-paces-note">Note: For VO₂ max workouts, rest is 50% to 90% effort time</p>
                 </div>
 
                 <p class="note">Distances shown as miles (km). Weeks count down to race day.</p>
