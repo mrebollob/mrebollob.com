@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="Description" content="W.S. Colors - Explore Wada Sanzo's harmonious color combinations on your mobile device">
+    <link rel="icon" href="assets/wscolors_app_icon.png" type="image/png">
+
+    <title>W.S. Colors - Wada Sanzo Color Combinations</title>
+
+    <!-- Styling -->
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../css/skeleton-light.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .feature {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+        }
+
+        .feature h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .about {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .about h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .download-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .download-buttons {
+            margin-top: 2rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin: 0 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+        }
+
+        .download-btn img {
+            height: 60px;
+            width: auto;
+        }
+
+        .coming-soon {
+            position: relative;
+            cursor: default;
+        }
+
+        .coming-soon:hover {
+            transform: none;
+        }
+
+        .coming-soon-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .app-preview {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .app-preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .download-btn {
+                display: block;
+                margin: 1rem auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <h1>W.S. Colors</h1>
+                    <p>Discover the harmonious color combinations of Wada Sanzo on your mobile device</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURES SECTION -->
+    <div class="features">
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <h2 style="text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; color: #333;">App Features</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="three columns feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>348 Color Palettes</h3>
+                    <p>Browse the complete collection of harmonious color combinations from Wada Sanzo's original work</p>
+                </div>
+                <div class="three columns feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Color Scanner</h3>
+                    <p>Use your phone's camera to scan real-world colors and find matching combinations from the collection</p>
+                </div>
+                <div class="three columns feature">
+                    <div class="feature-icon">💾</div>
+                    <h3>Copy Color Codes</h3>
+                    <p>Instantly copy CMYK, RGB, HEX, and LAB values for any color or palette to use in your projects</p>
+                </div>
+                <div class="three columns feature">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Save Favorites</h3>
+                    <p>Mark your favorite palettes and access them across all your devices via cloud sync</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <h2>About Wada Sanzo</h2>
+                    <p>Wada Sanzo (1883-1967) was a Japanese painter, costume designer and researcher who devoted his life to the study of color theory. He believed that color was not just a decorative element, but a powerful tool for communication and expression.</p>
+                    <p>This app brings his timeless color combinations to your mobile device, making it easy to explore and apply these harmonious palettes in your creative projects.</p>
+                    <p>Based on "A Dictionary of Color Combinations Vol. 1" - a collection of 348 color combinations based on 159 colors from the original 6-volume work published from 1933 to 1934.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOWNLOAD SECTION -->
+    <div class="download-section">
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <h2>Download W.S. Colors</h2>
+                    <p>Available for free on Google Play Store • Coming soon to App Store</p>
+                    <div class="download-buttons">
+                        <a href="https://play.google.com/store/apps/details?id=com.mrebollob.wscolors" class="download-btn">
+                            <img src="../tabata/assets/google-play.png" alt="Download on Google Play">
+                        </a>
+                        <div class="download-btn coming-soon">
+                            <img src="../tabata/assets/app-store-download.png" alt="Coming Soon on App Store" style="opacity: 0.6;">
+                            <div class="coming-soon-overlay">Coming Soon</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <p>Made with ☕️ by Manuel Rebollo Báez</p>
+                    <a href="mailto:hi@mrebollob.com">hi@mrebollob.com</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
