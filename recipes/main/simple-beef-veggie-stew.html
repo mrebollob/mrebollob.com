@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Beef & Veggie Stew</title>
+    <link rel="stylesheet" href="../css/recipes-styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-title">Simple Beef & Veggie Stew</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="ingredients">
+            <h2>Ingredientes (4 porciones)</h2>
+            <ul class="checklist" data-recipe="simple-beef-veggie-stew">
+                <li><label><input type="checkbox">600 g beef chuck, cut into large cubes</li>
+                <li><label><input type="checkbox">1 tbsp olive oil</li>
+                <li><label><input type="checkbox">1 onion, chopped</li>
+                <li><label><input type="checkbox">2 cloves garlic, minced</li>
+                <li><label><input type="checkbox">2 carrots, sliced</li>
+                <li><label><input type="checkbox">2 potatoes, cubed</li>
+                <li><label><input type="checkbox">1 tbsp tomato paste</li>
+                <li><label><input type="checkbox">1 tsp salt</li>
+                <li><label><input type="checkbox">½ tsp black pepper</li>
+                <li><label><input type="checkbox">1 tsp smoked paprika (or sweet paprika)</li>
+                <li><label><input type="checkbox">1 bay leaf</li>
+                <li><label><input type="checkbox">750 ml beef stock (or water)</li>
+                <li><label><input type="checkbox">(Optional but nice: a splash of red wine or Worcestershire sauce)</li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('simple-beef-veggie-stew')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <h2>Instrucciones</h2>
+            <ol>
+                <li><strong>Step 1: Build flavor (traditional pot)</strong>
+                    <ul>
+                        <li>Heat a heavy pot over medium-high heat.</li>
+                        <li>Add olive oil and brown the beef in batches (don't overcrowd).
+                            <br>→ You want good color, not cooked through.</li>
+                        <li>Remove beef and lower heat to medium.</li>
+                        <li>Add onion and cook 5 minutes until soft.</li>
+                        <li>Add garlic and tomato paste, cook 30 seconds.</li>
+                        <li>Stir in paprika, salt, pepper.</li>
+                        <li>Return beef to the pot and deglaze with a splash of stock (or wine), scraping the bottom.</li>
+                    </ul>
+                </li>
+                <li><strong>Step 2: Slow cook (crock pot)</strong>
+                    <ul>
+                        <li>Transfer everything to the crock pot.</li>
+                        <li>Add carrots, potatoes, bay leaf, and remaining stock.</li>
+                        <li>Cook:
+                            <ul>
+                                <li>Low: 7–8 hours, or</li>
+                                <li>High: 4–5 hours</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Step 3: Finish</strong>
+                    <ul>
+                        <li>Taste and adjust salt/pepper.</li>
+                        <li>If you want it thicker, mash a few potato chunks into the stew or leave the lid off for the last 20–30 minutes.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+    </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/checklist.js"></script>
+
+</body>
+
+</html>
+

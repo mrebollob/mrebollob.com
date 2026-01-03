@@ -1,0 +1,37 @@
+---
+description: Project-wide AI coding rules for Kotlin / Android / Compose
+alwaysApply: true
+---
+
+# AI Coding Guidelines
+
+## Project understanding
+- Before writing or modifying any code, run and analyze `git ls-files`.
+- Understand the project structure, modules, and dependencies first.
+- If required context is missing, stop and ask for clarification.
+
+## Hard constraints
+- Do NOT refactor unrelated code.
+- Do NOT introduce new dependencies without explicit approval.
+- Do NOT change or remove public APIs unless explicitly requested.
+- Avoid broad or global changes not required by the task.
+
+## Working process
+- Propose a short plan before writing code when changes are non-trivial.
+- Clearly state which files will be modified and why.
+- If a solution requires significant architectural changes, stop and ask first.
+
+## Output quality
+- Produce production-quality code only.
+- Avoid unnecessary TODOs or placeholders.
+- Consider edge cases and failure scenarios.
+
+## Android / Compose specific
+- Follow the existing architecture and patterns in the project.
+- Optimize for Compose recomposition.
+- Use `remember`, `derivedStateOf`, and state hoisting appropriately.
+- Keep business logic out of Composables when applicable.
+
+## Style and consistency
+- Match existing naming conventions and code style.
+- Keep changes minimal and incremental.
