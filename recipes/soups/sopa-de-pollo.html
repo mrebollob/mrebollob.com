@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sopa de pollo clásica</title>
+    <link rel="stylesheet" href="../css/recipes-styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-title">Sopa de pollo clásica</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="ingredients">
+            <h2>Ingredientes (4 personas)</h2>
+            <ul class="checklist" data-recipe="sopa-de-pollo">
+                <li><label><input type="checkbox">1 pollo entero pequeño o 1 kg de muslos / carcasa</label></li>
+                <li><label><input type="checkbox">2 litros de agua</label></li>
+                <li><label><input type="checkbox">2 zanahorias</label></li>
+                <li><label><input type="checkbox">1 puerro</label></li>
+                <li><label><input type="checkbox">1 cebolla</label></li>
+                <li><label><input type="checkbox">1 rama de apio (opcional)</label></li>
+                <li><label><input type="checkbox">1–2 dientes de ajo</label></li>
+                <li><label><input type="checkbox">Sal al gusto</label></li>
+                <li><label><input type="checkbox">Pimienta en grano (opcional)</label></li>
+                <li><label><input type="checkbox">1 hoja de laurel</label></li>
+                <li><label><input type="checkbox">Fideos finos o arroz (opcional)</label></li>
+                <li><label><input type="checkbox">Aceite de oliva virgen extra</label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('sopa-de-pollo')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <h2>Instrucciones</h2>
+            <ol>
+                <li>Limpia el pollo y colócalo en una olla grande con el agua fría.</li>
+                <li>Lleva a ebullición y retira la espuma que suba a la superficie.</li>
+                <li>Añade las verduras peladas (enteras o en trozos grandes), el ajo, laurel y pimienta.</li>
+                <li>Cocina a fuego medio-bajo 1–1,5 horas, semi tapado.</li>
+                <li>Saca el pollo y las verduras.</li>
+                <li>Desmenuza el pollo (retira piel y huesos).</li>
+                <li>Cuela el caldo si lo quieres fino.</li>
+                <li>Devuelve el caldo a la olla, añade el pollo y:
+                    <ul>
+                        <li>Fideos: cuece 3–5 min</li>
+                        <li>Arroz: cuece 12–15 min</li>
+                    </ul>
+                </li>
+                <li>Ajusta de sal y añade un chorrito de aceite de oliva.</li>
+            </ol>
+        </section>
+
+        <section class="tips">
+            <h2>Opcionales y variaciones</h2>
+            <ul>
+                <li>Un poco de jengibre fresco si estás resfriado.</li>
+                <li>Hierbabuena o cilantro al servir.</li>
+                <li>Un chorrito de limón para levantar el sabor.</li>
+                <li>Patata o garbanzos cocidos para hacerla más completa.</li>
+            </ul>
+        </section>
+
+        <section class="tips">
+            <h2>Consejos</h2>
+            <ul>
+                <li>Si usas carcasa, el caldo sale más potente.</li>
+                <li>Reposa 30 min antes de servir: mejora mucho.</li>
+                <li>Se puede congelar perfectamente.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/checklist.js"></script>
+
+</body>
+
+</html>
