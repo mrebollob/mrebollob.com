@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Intervals.icu Workout Cheat Sheet</title>
+    <meta name="description" content="Quick reference guide for creating structured workouts in Intervals.icu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="./marathon.css">
+
+    <style>
+        /* Additional styles for cheat sheet */
+        .cheat-sheet-intro {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+            box-shadow: var(--shadow);
+        }
+
+        .cheat-sheet-intro p {
+            margin: 0 0 var(--space) 0;
+            color: var(--text-secondary);
+        }
+
+        .cheat-sheet-intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cheat-sheet-intro a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .cheat-sheet-intro a:hover {
+            text-decoration: underline;
+        }
+
+        .syntax-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .syntax-section h3 {
+            margin: 0 0 var(--space-lg) 0;
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .syntax-section h3::before {
+            content: '';
+            width: 4px;
+            height: 1.25rem;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .syntax-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        .syntax-table th {
+            text-align: left;
+            padding: var(--space-sm) var(--space);
+            background: var(--gray-50);
+            border-bottom: 2px solid var(--border);
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        .syntax-table td {
+            padding: var(--space-sm) var(--space);
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: top;
+        }
+
+        .syntax-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .syntax-table code {
+            background: var(--gray-100);
+            padding: 0.125rem 0.375rem;
+            border-radius: var(--radius-sm);
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+            font-size: 0.8125rem;
+            color: var(--primary);
+        }
+
+        .syntax-table .description {
+            color: var(--text-secondary);
+        }
+
+        .example-block {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .example-header {
+            background: var(--gray-50);
+            padding: var(--space) var(--space-lg);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .example-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .example-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.625rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.6875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .example-badge.tempo { background: var(--accent); }
+        .example-badge.intervals { background: var(--danger); }
+        .example-badge.long-run { background: var(--secondary); }
+        .example-badge.recovery { background: var(--recovery); }
+
+        .example-content {
+            padding: var(--space-lg);
+        }
+
+        .example-code {
+            background: var(--gray-800);
+            color: var(--gray-100);
+            padding: var(--space-lg);
+            border-radius: var(--radius);
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+            font-size: 0.8125rem;
+            line-height: 1.7;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .example-code .comment {
+            color: var(--gray-500);
+        }
+
+        .example-code .keyword {
+            color: var(--accent);
+        }
+
+        .example-code .value {
+            color: var(--secondary);
+        }
+
+        .example-description {
+            margin-top: var(--space);
+            padding-top: var(--space);
+            border-top: 1px solid var(--border-light);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: var(--space-lg);
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .back-link::before {
+            content: '←';
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.02));
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: var(--radius);
+            padding: var(--space);
+            margin-top: var(--space);
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+        }
+
+        .tip-box strong {
+            color: var(--primary);
+        }
+
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space);
+            margin-top: var(--space);
+        }
+
+        .unit-item {
+            background: var(--gray-50);
+            padding: var(--space-sm) var(--space);
+            border-radius: var(--radius-sm);
+            font-size: 0.8125rem;
+        }
+
+        .unit-item code {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        @media (max-width: 640px) {
+            .syntax-table {
+                font-size: 0.8125rem;
+            }
+
+            .syntax-table th,
+            .syntax-table td {
+                padding: var(--space-sm);
+            }
+
+            .example-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-sm);
+            }
+
+            .units-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="column" style="margin-top: 5%">
+
+                <a href="./index.html" class="back-link">Back to Marathon Plan</a>
+
+                <h1>Intervals.icu Workout Cheat Sheet</h1>
+
+                <div class="cheat-sheet-intro">
+                    <p>Quick reference for creating structured workouts in <a href="https://intervals.icu" target="_blank">Intervals.icu</a>. Workouts are written as plain text with a simple, readable syntax.</p>
+                    <p>Based on the official documentation: <a href="https://forum.intervals.icu/t/workout-builder/1163" target="_blank">Workout Builder Guide</a></p>
+                </div>
+
+                <!-- Basic Syntax -->
+                <div class="syntax-section">
+                    <h3>Basic Syntax</h3>
+                    <table class="syntax-table">
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>- Step text</code></td>
+                                <td class="description">Start each workout step with a dash (-)</td>
+                            </tr>
+                            <tr>
+                                <td><code>Section name</code></td>
+                                <td class="description">Lines without a dash become section headers (Warmup, Main set, etc.)</td>
+                            </tr>
+                            <tr>
+                                <td><code>6x</code></td>
+                                <td class="description">Add repeats by including "Nx" before a set of steps</td>
+                            </tr>
+                            <tr>
+                                <td><code>Press lap</code></td>
+                                <td class="description">End step when lap button pressed (Garmin devices)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Duration Formats -->
+                <div class="syntax-section">
+                    <h3>Duration Formats</h3>
+                    <table class="syntax-table">
+                        <thead>
+                            <tr>
+                                <th>Format</th>
+                                <th>Example</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>Xs</code></td>
+                                <td><code>30s</code></td>
+                                <td class="description">Seconds</td>
+                            </tr>
+                            <tr>
+                                <td><code>Xm</code></td>
+                                <td><code>10m</code></td>
+                                <td class="description">Minutes</td>
+                            </tr>
+                            <tr>
+                                <td><code>XmYs</code></td>
+                                <td><code>1m30</code> or <code>1m30s</code></td>
+                                <td class="description">Minutes and seconds</td>
+                            </tr>
+                            <tr>
+                                <td><code>Xh</code></td>
+                                <td><code>1h</code></td>
+                                <td class="description">Hours</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Distance Units -->
+                <div class="syntax-section">
+                    <h3>Distance Units</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: var(--space);">
+                        Distance-based workouts are supported for running and other sports.
+                    </p>
+                    <div class="units-grid">
+                        <div class="unit-item"><code>1km</code> or <code>1 km</code></div>
+                        <div class="unit-item"><code>1mi</code> or <code>1 mile</code></div>
+                        <div class="unit-item"><code>400mtr</code> or <code>400 meters</code></div>
+                        <div class="unit-item"><code>100yrd</code> or <code>100 yards</code></div>
+                    </div>
+                    <div class="tip-box">
+                        <strong>Note:</strong> The letter "m" alone means minutes, not meters. Use <code>mtr</code> or <code>meters</code> for meter distances.
+                    </div>
+                </div>
+
+                <!-- Intensity: Zones and Percentages -->
+                <div class="syntax-section">
+                    <h3>Intensity: Zones & Percentages</h3>
+                    <table class="syntax-table">
+                        <thead>
+                            <tr>
+                                <th>Format</th>
+                                <th>Example</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>X%</code></td>
+                                <td><code>80%</code></td>
+                                <td class="description">Percentage of FTP (cycling) or threshold pace (running)</td>
+                            </tr>
+                            <tr>
+                                <td><code>X-Y%</code></td>
+                                <td><code>70-80%</code></td>
+                                <td class="description">Percentage range</td>
+                            </tr>
+                            <tr>
+                                <td><code>X% HR</code></td>
+                                <td><code>75% HR</code></td>
+                                <td class="description">Percentage of max heart rate</td>
+                            </tr>
+                            <tr>
+                                <td><code>X% LTHR</code></td>
+                                <td><code>90% LTHR</code></td>
+                                <td class="description">Percentage of lactate threshold HR</td>
+                            </tr>
+                            <tr>
+                                <td><code>ZX</code></td>
+                                <td><code>Z2</code></td>
+                                <td class="description">Training zone (power/pace)</td>
+                            </tr>
+                            <tr>
+                                <td><code>ZX HR</code></td>
+                                <td><code>Z3 HR</code></td>
+                                <td class="description">Heart rate zone</td>
+                            </tr>
+                            <tr>
+                                <td><code>ZX Pace</code></td>
+                                <td><code>Z4 Pace</code></td>
+                                <td class="description">Pace zone</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Absolute Pace -->
+                <div class="syntax-section">
+                    <h3>Absolute Pace (Running)</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: var(--space);">
+                        Specify exact pace values instead of percentages. Added November 2025.
+                    </p>
+                    <table class="syntax-table">
+                        <thead>
+                            <tr>
+                                <th>Format</th>
+                                <th>Example</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>X:XX/km Pace</code></td>
+                                <td><code>5:30/km Pace</code></td>
+                                <td class="description">Pace per kilometer</td>
+                            </tr>
+                            <tr>
+                                <td><code>X:XX/mi Pace</code></td>
+                                <td><code>8:00/mi Pace</code></td>
+                                <td class="description">Pace per mile</td>
+                            </tr>
+                            <tr>
+                                <td><code>X:XX-Y:YY/km Pace</code></td>
+                                <td><code>5:30-5:00/km Pace</code></td>
+                                <td class="description">Pace range (slower to faster)</td>
+                            </tr>
+                            <tr>
+                                <td><code>X:XX/400m Pace</code></td>
+                                <td><code>1:45/400m Pace</code></td>
+                                <td class="description">Pace per 400m (track)</td>
+                            </tr>
+                            <tr>
+                                <td><code>X:XX/100m Pace</code></td>
+                                <td><code>1:40/100m Pace</code></td>
+                                <td class="description">Pace per 100m (swimming)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="units-grid">
+                        <div class="unit-item"><code>/km</code> per kilometer</div>
+                        <div class="unit-item"><code>/mi</code> per mile</div>
+                        <div class="unit-item"><code>/100m</code> per 100 meters</div>
+                        <div class="unit-item"><code>/400m</code> per 400 meters</div>
+                        <div class="unit-item"><code>/500m</code> per 500 meters</div>
+                        <div class="unit-item"><code>/100y</code> per 100 yards</div>
+                        <div class="unit-item"><code>/250m</code> per 250 meters</div>
+                    </div>
+                </div>
+
+                <!-- Ramps and Cadence -->
+                <div class="syntax-section">
+                    <h3>Ramps & Cadence</h3>
+                    <table class="syntax-table">
+                        <thead>
+                            <tr>
+                                <th>Format</th>
+                                <th>Example</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>Ramp X-Y%</code></td>
+                                <td><code>Ramp 60-80%</code></td>
+                                <td class="description">Gradual increase in intensity</td>
+                            </tr>
+                            <tr>
+                                <td><code>X rpm</code></td>
+                                <td><code>90 rpm</code></td>
+                                <td class="description">Target cadence (cycling)</td>
+                            </tr>
+                            <tr>
+                                <td><code>X-Y rpm</code></td>
+                                <td><code>85-95 rpm</code></td>
+                                <td class="description">Cadence range</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 style="margin-top: var(--space-2xl);">Running Workout Examples</h2>
+
+                <!-- Example: Easy Run -->
+                <div class="example-block">
+                    <div class="example-header">
+                        <span class="example-title">Easy Recovery Run</span>
+                        <span class="example-badge recovery">Recovery</span>
+                    </div>
+                    <div class="example-content">
+                        <div class="example-code">Easy Recovery Run
+- 5km 65-70% Pace</div>
+                        <p class="example-description">Simple 5km run at recovery pace (65-70% of threshold pace).</p>
+                    </div>
+                </div>
+
+                <!-- Example: Tempo Run -->
+                <div class="example-block">
+                    <div class="example-header">
+                        <span class="example-title">Tempo Run with Warmup/Cooldown</span>
+                        <span class="example-badge tempo">Tempo</span>
+                    </div>
+                    <div class="example-content">
+                        <div class="example-code">Warmup
+- 2km 65% Pace
+
+Tempo
+- 5km 88-92% Pace
+
+Cooldown
+- 2km 60% Pace</div>
+                        <p class="example-description">Classic tempo workout with proper warmup and cooldown. The tempo section is at lactate threshold pace.</p>
+                    </div>
+                </div>
+
+                <!-- Example: Interval Training -->
+                <div class="example-block">
+                    <div class="example-header">
+                        <span class="example-title">VO2max Intervals (5x1000m)</span>
+                        <span class="example-badge intervals">Intervals</span>
+                    </div>
+                    <div class="example-content">
+                        <div class="example-code">Warmup
+- 2km 65% Pace
+- 4x 100mtr strides at 95%
+
+Main set 5x
+- 1km 95-100% Pace
+- 400mtr recovery at 55% Pace
+
+Cooldown
+- 2km 60% Pace</div>
+                        <p class="example-description">Classic VO2max workout: 5 repetitions of 1km at near-threshold pace with 400m recovery jogs.</p>
+                    </div>
+                </div>
+
+                <!-- Example: 400m Track Repeats -->
+                <div class="example-block">
+                    <div class="example-header">
+                        <span class="example-title">Track Workout (400m Repeats)</span>
+                        <span class="example-badge intervals">Intervals</span>
+                    </div>
+                    <div class="example-content">
+                        <div class="example-code">Warmup
+- 10m 65% Pace
+
+Track Intervals 8x
+- 400mtr 1:35/400m Pace
+- 200mtr recovery at 60%
+
+Cooldown
+- 10m 60% Pace</div>
+                        <p class="example-description">Track session with 8x400m at specific pace target (1:35 per 400m) with 200m recovery jogs.</p>
+                    </div>
+                </div>
+
+                <!-- Example: Long Run with MP -->
+                <div class="example-block">
+                    <div class="example-header">
+                        <span class="example-title">Marathon Pace Long Run</span>
+                        <span class="example-badge long-run">Long Run</span>
+                    </div>
+                    <div class="example-content">
+                        <div class="example-code">Long Run with Marathon Pace
+- 6km 70% Pace warmup
+- 16km 5:40/km Pace marathon pace
+- 3km 65% Pace cooldown</div>
+                        <p class="example-description">25km long run with 16km at marathon goal pace (5:40/km). Great for race-specific preparation.</p>
+                    </div>
+                </div>
+
+                <!-- Example: Progression Run -->
+                <div class="example-block">
+                    <div class="example-header">
+                        <span class="example-title">Progression Run</span>
+                        <span class="example-badge tempo">Tempo</span>
+                    </div>
+                    <div class="example-content">
+                        <div class="example-code">Progression Run
+- 3km 70% Pace easy start
+- 3km 75% Pace moderate
+- 3km 80% Pace tempo
+- 3km 85% Pace strong finish
+- 1km 60% Pace cooldown</div>
+                        <p class="example-description">Gradually increase pace throughout the run. Great for building race instincts and negative split practice.</p>
+                    </div>
+                </div>
+
+                <!-- Example: Fartlek -->
+                <div class="example-block">
+                    <div class="example-header">
+                        <span class="example-title">Fartlek Session</span>
+                        <span class="example-badge intervals">Intervals</span>
+                    </div>
+                    <div class="example-content">
+                        <div class="example-code">Warmup
+- 15m 65% Pace
+
+Fartlek 6x
+- 2m 90% Pace hard effort
+- 3m 70% Pace easy jog
+
+Cooldown
+- 10m 60% Pace</div>
+                        <p class="example-description">Unstructured speed play with alternating hard and easy efforts based on time rather than distance.</p>
+                    </div>
+                </div>
+
+                <!-- Example: Hill Repeats -->
+                <div class="example-block">
+                    <div class="example-header">
+                        <span class="example-title">Hill Repeats</span>
+                        <span class="example-badge intervals">Intervals</span>
+                    </div>
+                    <div class="example-content">
+                        <div class="example-code">Warmup
+- 15m 65% Pace include dynamic stretches
+
+Hill Repeats 8x
+- 90s 95% uphill hard effort
+- 2m jog down recovery at 50%
+
+Cooldown
+- 10m 60% Pace</div>
+                        <p class="example-description">Strength-building hill workout. Focus on form during the uphill efforts, easy jog back down for recovery.</p>
+                    </div>
+                </div>
+
+                <!-- Example: With absolute pace -->
+                <div class="example-block">
+                    <div class="example-header">
+                        <span class="example-title">Threshold Run (Absolute Pace)</span>
+                        <span class="example-badge tempo">Tempo</span>
+                    </div>
+                    <div class="example-content">
+                        <div class="example-code">Threshold Session
+- 2km 6:00/km Pace warmup
+- 20m 4:50-4:40/km Pace threshold effort
+- 2km 6:30/km Pace cooldown</div>
+                        <p class="example-description">20-minute threshold run at specific pace targets. Using absolute pace values instead of percentages.</p>
+                    </div>
+                </div>
+
+                <div class="note" style="margin-top: var(--space-2xl);">
+                    <strong>Resources:</strong>
+                    <ul style="margin: var(--space) 0 0 0; padding-left: var(--space-lg);">
+                        <li><a href="https://forum.intervals.icu/t/workout-builder/1163" target="_blank" style="color: var(--primary);">Workout Builder Guide</a> - Main documentation</li>
+                        <li><a href="https://forum.intervals.icu/t/distanced-based-workouts-supported/9973" target="_blank" style="color: var(--primary);">Distance-based Workouts</a> - Using km, miles, meters</li>
+                        <li><a href="https://forum.intervals.icu/t/specify-workouts-using-absolute-pace/115846" target="_blank" style="color: var(--primary);">Absolute Pace Workouts</a> - Using specific pace values</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
