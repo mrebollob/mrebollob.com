@@ -356,4 +356,48 @@ window.addEventListener('load', function () {
   // Initial updates
   updateDates();
   updatePaceDisplay();
+  
+  // Initialize intervals.icu collapsible sections
+  initIntervalsToggles();
 });
+
+// Initialize collapsible intervals.icu sections
+function initIntervalsToggles() {
+  const toggles = document.querySelectorAll('.intervals-toggle');
+  
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      const content = this.nextElementSibling;
+      
+      // Toggle active class on button
+      this.classList.toggle('active');
+      
+      // Toggle show class on content
+      content.classList.toggle('show');
+    });
+  });
+  
+  // Initialize copy buttons
+  const copyBtns = document.querySelectorAll('.copy-btn');
+  
+  copyBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      
+      const codeElement = this.closest('.intervals-day').querySelector('.intervals-code');
+      if (!codeElement) return;
+      
+      const text = codeElement.textContent;
+      
+      navigator.clipboard.writeText(text).then(() => {
+        this.classList.add('copied');
+        this.textContent = 'Copied!';
+        
+        setTimeout(() => {
+          this.classList.remove('copied');
+          this.textContent = 'Copy';
+        }, 2000);
+      });
+    });
+  });
+}
