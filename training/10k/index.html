@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sub-40 10K Training Plan</title>
+    <meta name="description" content="6-week training plan to run a sub-40 minute 10K">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../styles/training.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="column" style="margin-top: 5%">
+                <a href="../" class="back-link">Training Plans</a>
+                
+                <h1>🏃 Sub-40 Minute 10K Plan</h1>
+                
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: var(--space-lg); max-width: 700px; margin-left: auto; margin-right: auto;">
+                    A 6-week training plan designed to help you break the 40-minute barrier in the 10K. 
+                    Requires 5 runs per week and the ability to run ~5 miles comfortably.
+                </p>
+
+                <div class="date-input-section">
+                    <div class="input-group">
+                        <label for="race-date">Race Date:</label>
+                        <input type="date" id="race-date">
+                    </div>
+                </div>
+                
+                <div id="countdown-info"></div>
+
+                <!-- Pace Chart -->
+                <div class="pace-chart">
+                    <h3>📊 Pace Chart</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>per km</th>
+                                <th>per mile</th>
+                                <th>per 400m</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Easy</td>
+                                <td colspan="3" style="font-style: italic; color: var(--text-muted);">Conversational pace</td>
+                            </tr>
+                            <tr>
+                                <td>Steady</td>
+                                <td>4:15</td>
+                                <td>6:51</td>
+                                <td>1:42</td>
+                            </tr>
+                            <tr>
+                                <td>Tempo / Threshold</td>
+                                <td>4:10</td>
+                                <td>6:40</td>
+                                <td>1:34</td>
+                            </tr>
+                            <tr style="background: var(--gray-50); font-weight: 500;">
+                                <td>10K Pace (Goal)</td>
+                                <td>4:00</td>
+                                <td>6:24</td>
+                                <td>1:30</td>
+                            </tr>
+                            <tr>
+                                <td>5K Pace</td>
+                                <td>3:50</td>
+                                <td>6:06</td>
+                                <td>1:26</td>
+                            </tr>
+                            <tr>
+                                <td>3K Pace</td>
+                                <td>3:40</td>
+                                <td>5:50</td>
+                                <td>1:22</td>
+                            </tr>
+                            <tr>
+                                <td>1500m Pace</td>
+                                <td>3:30</td>
+                                <td>5:34</td>
+                                <td>1:18</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Weekly Structure Reference -->
+                <div class="note" style="margin-bottom: var(--space-2xl); border-left-color: var(--secondary);">
+                    <h4>Weekly Structure</h4>
+                    <p><strong>Mon:</strong> Easy | <strong>Tue:</strong> Intervals | <strong>Wed:</strong> Easy | <strong>Thu:</strong> Rest | <strong>Fri:</strong> Tempo/Steady/Intervals | <strong>Sat:</strong> Rest | <strong>Sun:</strong> Long Run</p>
+                    <p style="margin-bottom: 0;"><strong>Warm-up:</strong> 20 min easy jog + drills before quality sessions<br>
+                    <strong>Cool-down:</strong> 10 min easy jog</p>
+                </div>
+
+                <!-- Week 1 -->
+                <div class="training-block block-1">
+                    <h2 class="block-title">Week 1</h2>
+                    <div class="weeks-grid">
+                        <div class="week-card">
+                            <div class="week-header">
+                                <div class="week-number">Week 1</div>
+                                <div class="week-date" data-week="5">-</div>
+                            </div>
+                            <div class="week-schedule">
+                                <div class="day">
+                                    <span class="day-name">Mon</span>
+                                    <span class="workout">Easy run 50 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Tue</span>
+                                    <span class="workout intervals">5 × 1600m @ 10K pace (2 min rest)</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Wed</span>
+                                    <span class="workout">Easy run 50 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Thu</span>
+                                    <span class="workout rest">Rest</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Fri</span>
+                                    <span class="workout tempo">2 × 10 min @ tempo pace (3 min rest)</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Sat</span>
+                                    <span class="workout rest">Rest</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Sun</span>
+                                    <span class="workout long-run">Long run 60 min (easy)</span>
+                                </div>
+                            </div>
+                            
+                            <button class="intervals-toggle">Intervals.icu Workouts</button>
+                            <div class="intervals-content">
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Mon</span>
+                                        <span class="intervals-day-title">Easy Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 50m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Tue</span>
+                                        <span class="intervals-day-title">5×1600m @ 10K Pace</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Warmup
+- 20m 65% Pace
+
+Intervals 5x
+- 1600mtr 4:00/km Pace
+- 2m recovery 60% Pace
+
+Cooldown
+- 10m 60% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Wed</span>
+                                        <span class="intervals-day-title">Easy Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 50m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Fri</span>
+                                        <span class="intervals-day-title">2×10min Tempo</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Warmup
+- 20m 65% Pace
+
+Tempo 2x
+- 10m 4:10/km Pace
+- 3m recovery 60% Pace
+
+Cooldown
+- 10m 60% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Sun</span>
+                                        <span class="intervals-day-title">Long Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Long Run
+- 60m 70-75% Pace</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="training-block block-2">
+                    <h2 class="block-title">Week 2</h2>
+                    <div class="weeks-grid">
+                        <div class="week-card">
+                            <div class="week-header">
+                                <div class="week-number">Week 2</div>
+                                <div class="week-date" data-week="4">-</div>
+                            </div>
+                            <div class="week-schedule">
+                                <div class="day">
+                                    <span class="day-name">Mon</span>
+                                    <span class="workout">Easy run 50 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Tue</span>
+                                    <span class="workout intervals">8 × 400m @ 1500m pace (90 sec rest)</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Wed</span>
+                                    <span class="workout">Easy run 50 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Thu</span>
+                                    <span class="workout rest">Rest</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Fri</span>
+                                    <span class="workout tempo">Steady run: 10 miles @ 4:15/km</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Sat</span>
+                                    <span class="workout rest">Rest</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Sun</span>
+                                    <span class="workout long-run">Long run 65 min</span>
+                                </div>
+                            </div>
+                            
+                            <button class="intervals-toggle">Intervals.icu Workouts</button>
+                            <div class="intervals-content">
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Mon</span>
+                                        <span class="intervals-day-title">Easy Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 50m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Tue</span>
+                                        <span class="intervals-day-title">8×400m @ 1500m Pace</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Warmup
+- 20m 65% Pace
+
+Intervals 8x
+- 400mtr 3:30/km Pace
+- 90s recovery 60% Pace
+
+Cooldown
+- 10m 60% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Wed</span>
+                                        <span class="intervals-day-title">Easy Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 50m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Fri</span>
+                                        <span class="intervals-day-title">Steady 16km</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Steady Run
+- 16km 4:15/km Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Sun</span>
+                                        <span class="intervals-day-title">Long Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Long Run
+- 65m 70-75% Pace</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="training-block block-3">
+                    <h2 class="block-title">Week 3</h2>
+                    <div class="weeks-grid">
+                        <div class="week-card">
+                            <div class="week-header">
+                                <div class="week-number">Week 3</div>
+                                <div class="week-date" data-week="3">-</div>
+                            </div>
+                            <div class="week-schedule">
+                                <div class="day">
+                                    <span class="day-name">Mon</span>
+                                    <span class="workout">Easy run 55 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Tue</span>
+                                    <span class="workout intervals">6 × 800m @ 5K pace (90 sec rest)</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Wed</span>
+                                    <span class="workout">Easy run 50 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Thu</span>
+                                    <span class="workout rest">Rest</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Fri</span>
+                                    <span class="workout tempo">20 min continuous @ tempo pace</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Sat</span>
+                                    <span class="workout rest">Rest</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Sun</span>
+                                    <span class="workout long-run">Long run 70 min</span>
+                                </div>
+                            </div>
+                            
+                            <button class="intervals-toggle">Intervals.icu Workouts</button>
+                            <div class="intervals-content">
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Mon</span>
+                                        <span class="intervals-day-title">Easy Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 55m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Tue</span>
+                                        <span class="intervals-day-title">6×800m @ 5K Pace</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Warmup
+- 20m 65% Pace
+
+Intervals 6x
+- 800mtr 3:50/km Pace
+- 90s recovery 60% Pace
+
+Cooldown
+- 10m 60% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Wed</span>
+                                        <span class="intervals-day-title">Easy Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 50m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Fri</span>
+                                        <span class="intervals-day-title">20min Tempo</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Warmup
+- 20m 65% Pace
+
+Tempo
+- 20m 4:10/km Pace
+
+Cooldown
+- 10m 60% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Sun</span>
+                                        <span class="intervals-day-title">Long Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Long Run
+- 70m 70-75% Pace</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 4 (Consolidation) -->
+                <div class="training-block">
+                    <h2 class="block-title" style="color: var(--recovery);">Week 4 – Consolidation</h2>
+                    <div class="weeks-grid">
+                        <div class="week-card recovery-week">
+                            <div class="week-header">
+                                <div class="week-number">
+                                    Week 4
+                                    <span class="consolidation-badge">Lower Intensity</span>
+                                </div>
+                                <div class="week-date" data-week="2">-</div>
+                            </div>
+                            <div class="week-schedule">
+                                <div class="day">
+                                    <span class="day-name">Mon</span>
+                                    <span class="workout">Easy run 55 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Tue</span>
+                                    <span class="workout">Easy run 45 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Wed</span>
+                                    <span class="workout">Easy run 50 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Thu</span>
+                                    <span class="workout rest">Rest</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Fri</span>
+                                    <span class="workout tempo">Steady run: 10 miles @ 4:15/km</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Sat</span>
+                                    <span class="workout rest">Rest</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Sun</span>
+                                    <span class="workout long-run">Long run 75 min</span>
+                                </div>
+                            </div>
+                            
+                            <button class="intervals-toggle">Intervals.icu Workouts</button>
+                            <div class="intervals-content">
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Mon</span>
+                                        <span class="intervals-day-title">Easy Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 55m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Tue</span>
+                                        <span class="intervals-day-title">Easy Run (Consolidation)</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 45m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Wed</span>
+                                        <span class="intervals-day-title">Easy Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 50m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Fri</span>
+                                        <span class="intervals-day-title">Steady 16km</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Steady Run
+- 16km 4:15/km Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Sun</span>
+                                        <span class="intervals-day-title">Long Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Long Run
+- 75m 70-75% Pace</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 5 -->
+                <div class="training-block block-1">
+                    <h2 class="block-title">Week 5</h2>
+                    <div class="weeks-grid">
+                        <div class="week-card">
+                            <div class="week-header">
+                                <div class="week-number">Week 5</div>
+                                <div class="week-date" data-week="1">-</div>
+                            </div>
+                            <div class="week-schedule">
+                                <div class="day">
+                                    <span class="day-name">Mon</span>
+                                    <span class="workout">Easy run 55 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Tue</span>
+                                    <span class="workout intervals">4 × 1km @ 5K pace (2 min rest)</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Wed</span>
+                                    <span class="workout">Easy run 50 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Thu</span>
+                                    <span class="workout rest">Rest</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Fri</span>
+                                    <span class="workout intervals">8 × 1000m @ 10K pace (90 sec rest)</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Sat</span>
+                                    <span class="workout rest">Rest</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Sun</span>
+                                    <span class="workout long-run">Long run 65 min</span>
+                                </div>
+                            </div>
+                            
+                            <button class="intervals-toggle">Intervals.icu Workouts</button>
+                            <div class="intervals-content">
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Mon</span>
+                                        <span class="intervals-day-title">Easy Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 55m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Tue</span>
+                                        <span class="intervals-day-title">4×1km @ 5K Pace</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Warmup
+- 20m 65% Pace
+
+Intervals 4x
+- 1km 3:50/km Pace
+- 2m recovery 60% Pace
+
+Cooldown
+- 10m 60% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Wed</span>
+                                        <span class="intervals-day-title">Easy Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 50m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Fri</span>
+                                        <span class="intervals-day-title">8×1000m @ 10K Pace</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Warmup
+- 20m 65% Pace
+
+Intervals 8x
+- 1km 4:00/km Pace
+- 90s recovery 60% Pace
+
+Cooldown
+- 10m 60% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Sun</span>
+                                        <span class="intervals-day-title">Long Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Long Run
+- 65m 70-75% Pace</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 6 (Race Week) -->
+                <div class="training-block block-4">
+                    <h2 class="block-title">Week 6 – Race Week</h2>
+                    <div class="weeks-grid">
+                        <div class="week-card">
+                            <div class="week-header">
+                                <div class="week-number">Week 6</div>
+                                <div class="week-date" data-week="0">-</div>
+                            </div>
+                            <div class="week-schedule">
+                                <div class="day">
+                                    <span class="day-name">Mon</span>
+                                    <span class="workout">Easy run 45 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Tue</span>
+                                    <span class="workout intervals">16 × 200m @ 5K pace (60 sec rest)</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Wed</span>
+                                    <span class="workout">Easy run 50 min</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Thu</span>
+                                    <span class="workout rest">Rest</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Fri</span>
+                                    <span class="workout rest">Rest</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Sat</span>
+                                    <span class="workout race-day">🏁 10K Race</span>
+                                </div>
+                                <div class="day">
+                                    <span class="day-name">Sun</span>
+                                    <span class="workout recovery">Easy recovery run</span>
+                                </div>
+                            </div>
+                            
+                            <button class="intervals-toggle">Intervals.icu Workouts</button>
+                            <div class="intervals-content">
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Mon</span>
+                                        <span class="intervals-day-title">Easy Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 45m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Tue</span>
+                                        <span class="intervals-day-title">16×200m @ 5K Pace</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Warmup
+- 20m 65% Pace
+
+Intervals 16x
+- 200mtr 3:50/km Pace
+- 60s recovery 60% Pace
+
+Cooldown
+- 10m 60% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Wed</span>
+                                        <span class="intervals-day-title">Easy Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Easy Run
+- 50m 65-70% Pace</pre>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Sat</span>
+                                        <span class="intervals-day-title">10K Race</span>
+                                    </div>
+                                    <div class="intervals-rest">Race day! Good luck! 🏁</div>
+                                </div>
+                                <div class="intervals-day">
+                                    <div class="intervals-day-header">
+                                        <span class="intervals-day-name">Sun</span>
+                                        <span class="intervals-day-title">Recovery Run</span>
+                                        <button class="copy-btn">Copy</button>
+                                    </div>
+                                    <pre class="intervals-code">Recovery Run
+- 30m 60-65% Pace</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Race Targets -->
+                <div class="note" style="border-left-color: var(--danger);">
+                    <h4>🏁 Race Day Targets</h4>
+                    <ul>
+                        <li><strong>Goal pace:</strong> 4:00/km</li>
+                        <li><strong>400m splits:</strong> ~90 sec</li>
+                        <li><strong>First 2 km:</strong> Controlled, don't go out too fast</li>
+                        <li><strong>Km 7–9:</strong> Hold pace, this is where it gets tough</li>
+                        <li><strong>Last km:</strong> Push if you have anything left</li>
+                    </ul>
+                </div>
+
+                <!-- Important Notes -->
+                <div class="note" style="border-left-color: var(--accent);">
+                    <h4>⚠️ Important Notes</h4>
+                    <ul>
+                        <li><strong>Easy runs should feel very easy</strong> – 8:30–9:00/mile is normal and appropriate</li>
+                        <li>If the 10-mile steady run at 4:15/km feels impossible → slow it down</li>
+                        <li>Missing pace slightly is better than overreaching and getting injured</li>
+                        <li><strong>Stay healthy > perfect execution</strong></li>
+                    </ul>
+                </div>
+
+                <p class="note" style="border-left-color: var(--secondary);">
+                    <strong>Intervals.icu Users:</strong> Click "Intervals.icu Workouts" under each week to see the workout code. Check out the <a href="../intervals-cheat-sheet/" style="color: var(--primary);">Workout Builder Cheat Sheet</a> for syntax reference.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/training.js"></script>
+    <script>
+        // 10K Plan specific JavaScript
+        const PLAN_TYPE = '10k';
+        
+        function updateDates() {
+            const raceDateInput = document.getElementById('race-date');
+            const countdownInfo = document.getElementById('countdown-info');
+            const weekDateCells = document.querySelectorAll('.week-date');
+
+            if (!raceDateInput.value) {
+                countdownInfo.innerHTML = '';
+                weekDateCells.forEach(cell => {
+                    cell.textContent = '-';
+                });
+                return;
+            }
+
+            const raceDate = new Date(raceDateInput.value);
+            const today = new Date();
+
+            // Calculate days until race
+            const daysUntil = DateUtils.daysBetween(today, raceDate);
+            const weeksUntil = Math.floor(daysUntil / 7);
+
+            // Display countdown info
+            if (daysUntil > 0) {
+                countdownInfo.innerHTML = `<strong>${daysUntil} days</strong> (${weeksUntil} weeks) until race day`;
+            } else if (daysUntil === 0) {
+                countdownInfo.innerHTML = '<strong>Race day is today! Good luck! 🏁</strong>';
+            } else {
+                countdownInfo.innerHTML = `Race was ${Math.abs(daysUntil)} days ago`;
+            }
+
+            // Update week dates
+            updateWeekDates(raceDate, weekDateCells);
+        }
+
+        // Initialize page
+        window.addEventListener('load', function() {
+            const raceDateInput = document.getElementById('race-date');
+
+            // Try to load saved date
+            const savedDate = TrainingStorage.loadDate(PLAN_TYPE);
+
+            if (savedDate) {
+                raceDateInput.value = savedDate;
+            } else {
+                // Default: 6 weeks from today (Saturday)
+                const today = new Date();
+                const daysUntilSaturday = (6 - today.getDay() + 7) % 7 || 7;
+                const defaultRaceDate = new Date(today.getTime() + (5 * 7 + daysUntilSaturday) * 24 * 60 * 60 * 1000);
+                raceDateInput.value = defaultRaceDate.toISOString().split('T')[0];
+            }
+
+            // Add event listener for date changes
+            raceDateInput.addEventListener('change', function() {
+                TrainingStorage.saveDate(PLAN_TYPE, raceDateInput.value);
+                updateDates();
+            });
+
+            // Initial update
+            updateDates();
+            
+            // Initialize collapsible intervals sections
+            initCollapsibleSections();
+        });
+    </script>
+</body>
+
+</html>

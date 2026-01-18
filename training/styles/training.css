@@ -1,4 +1,4 @@
-/* Marathon Training Plan - Modern Minimalist Styles */
+/* Training Plan - Shared Modern Minimalist Styles */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -97,6 +97,34 @@ h2 {
   letter-spacing: -0.025em;
 }
 
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--space) 0;
+}
+
+/* Back link */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--space-lg);
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--primary);
+}
+
+.back-link::before {
+  content: '←';
+}
+
 /* Date input section */
 .date-input-section {
   background: var(--surface);
@@ -156,6 +184,11 @@ h2 {
   color: var(--text-secondary);
   font-weight: 500;
   text-align: center;
+}
+
+#countdown-info strong {
+  color: var(--primary);
+  font-weight: 600;
 }
 
 /* Pace display card */
@@ -303,24 +336,51 @@ h2 {
   margin: 0;
 }
 
-@media (max-width: 640px) {
-  .training-paces-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space);
-  }
-  
-  .pace-item {
-    padding: var(--space-sm);
-  }
-  
-  .pace-times {
-    font-size: 0.875rem;
-  }
+/* Pace chart table */
+.pace-chart {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  box-shadow: var(--shadow);
 }
 
-#countdown-info strong {
-  color: var(--primary);
+.pace-chart h3 {
+  margin: 0 0 var(--space-lg) 0;
+  text-align: center;
+}
+
+.pace-chart table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.pace-chart th,
+.pace-chart td {
+  padding: var(--space-sm) var(--space);
+  text-align: center;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pace-chart th {
   font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  background: var(--gray-50);
+}
+
+.pace-chart tr:last-child td {
+  border-bottom: none;
+}
+
+.pace-chart td:first-child {
+  font-weight: 500;
+  text-align: left;
+  color: var(--text-primary);
 }
 
 /* Training blocks */
@@ -393,7 +453,8 @@ h2 {
   gap: var(--space-sm);
 }
 
-.recovery-badge {
+.recovery-badge,
+.consolidation-badge {
   background: var(--recovery);
   color: white;
   padding: 0.25rem 0.5rem;
@@ -402,6 +463,10 @@ h2 {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.consolidation-badge {
+  background: var(--accent);
 }
 
 .week-date {
@@ -454,24 +519,25 @@ h2 {
 }
 
 /* Workout type indicators */
-.workout:has-text("Rest") {
+.workout.rest {
   color: var(--text-muted);
   font-style: italic;
 }
 
-.workout:has-text("Recovery") {
+.workout.recovery {
   color: var(--recovery);
 }
 
-.workout:has-text("LT") {
+.workout.tempo,
+.workout.threshold {
   color: var(--accent);
 }
 
-.workout:has-text("VO₂") {
+.workout.intervals {
   color: var(--danger);
 }
 
-.workout:has-text("Long run") {
+.workout.long-run {
   color: var(--secondary);
   font-weight: 500;
 }
@@ -535,74 +601,174 @@ h2 {
   border-left: 4px solid var(--primary);
 }
 
-/* Mobile-first responsive design */
-@media (max-width: 640px) {
-  .container {
-    padding: var(--space);
-  }
-
-  h1 {
-    font-size: 2rem;
-    margin-bottom: var(--space-xl);
-  }
-
-  .weeks-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space);
-  }
-
-  .week-card {
-    padding: var(--space);
-  }
-
-  .week-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-sm);
-  }
-
-  .week-volume {
-    text-align: left;
-  }
-
-  .day {
-    grid-template-columns: 2.5rem 1fr;
-    gap: var(--space-sm);
-  }
-
-  .day-name {
-    font-size: 0.6875rem;
-  }
-
-  .workout {
-    font-size: 0.8125rem;
-  }
-
-  .date-input-section {
-    padding: var(--space);
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .input-group {
-    margin-bottom: var(--space);
-  }
-  
-  .input-group:last-child {
-    margin-bottom: 0;
-  }
+.note h4 {
+  margin: 0 0 var(--space) 0;
+  color: var(--text-primary);
+  font-size: 1rem;
 }
 
-@media (min-width: 641px) and (max-width: 1024px) {
-  .weeks-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
+.note p {
+  margin: 0 0 var(--space-sm) 0;
 }
 
-@media (min-width: 1025px) {
-  .weeks-grid {
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  }
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+.note ul {
+  margin: var(--space-sm) 0;
+  padding-left: var(--space-lg);
+}
+
+.note li {
+  margin-bottom: var(--space-xs);
+}
+
+/* Exercise cards (for weightlifting) */
+.exercise-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space);
+  box-shadow: var(--shadow-sm);
+}
+
+.exercise-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.exercise-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: var(--space-xs);
+}
+
+.exercise-details {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.exercise-sets {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.exercise-notes {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Routine header */
+.routine-header {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow);
+}
+
+.routine-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-xs) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.routine-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0 0 var(--space) 0;
+}
+
+.routine-meta {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.routine-meta-item {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.routine-meta-item strong {
+  color: var(--text-primary);
+}
+
+/* Section separator */
+.section-separator {
+  height: 1px;
+  background: var(--border);
+  margin: var(--space-2xl) 0;
+}
+
+/* Optional finisher styling */
+.optional-section {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px dashed var(--border);
+}
+
+.optional-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+
+/* Navigation cards for training index */
+.nav-grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: var(--space-xl);
+}
+
+.nav-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.nav-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.nav-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space);
+}
+
+.nav-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.nav-card-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
 /* Collapsible intervals.icu section */
@@ -736,17 +902,108 @@ h2 {
   color: white;
 }
 
+/* Mobile-first responsive design */
 @media (max-width: 640px) {
+  .container {
+    padding: var(--space);
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  .weeks-grid,
+  .nav-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space);
+  }
+
+  .week-card {
+    padding: var(--space);
+  }
+
+  .week-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .week-volume {
+    text-align: left;
+  }
+
+  .day {
+    grid-template-columns: 2.5rem 1fr;
+    gap: var(--space-sm);
+  }
+
+  .day-name {
+    font-size: 0.6875rem;
+  }
+
+  .workout {
+    font-size: 0.8125rem;
+  }
+
+  .date-input-section {
+    padding: var(--space);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-group {
+    margin-bottom: var(--space);
+  }
+
+  .input-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .training-paces-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space);
+  }
+
+  .pace-item {
+    padding: var(--space-sm);
+  }
+
+  .pace-times {
+    font-size: 0.875rem;
+  }
+
   .intervals-code {
     font-size: 0.6875rem;
     padding-left: 0;
   }
-  
+
   .intervals-rest {
     padding-left: 0;
   }
-  
+
   .intervals-day-header {
     flex-wrap: wrap;
+  }
+
+  .pace-chart table {
+    font-size: 0.75rem;
+  }
+
+  .pace-chart th,
+  .pace-chart td {
+    padding: var(--space-xs) var(--space-sm);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .weeks-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (min-width: 1025px) {
+  .weeks-grid {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   }
 }
