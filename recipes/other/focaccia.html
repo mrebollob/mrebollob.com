@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focaccia</title>
+    <link rel="stylesheet" href="../css/recipes-styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-title">Focaccia</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section class="ingredients">
+            <h2>Ingredientes</h2>
+            <p><em>Para 2 focaccias</em></p>
+            <ul class="checklist" data-recipe="focaccia">
+                <li><label><input type="checkbox">1000g de harina (100%)</label></li>
+                <li><label><input type="checkbox">800g de agua (80%)</label></li>
+                <li><label><input type="checkbox">15g de sal (1,5%)</label></li>
+                <li><label><input type="checkbox">2,25g de levadura seca (0,03%)</label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('focaccia')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <h2>Instrucciones</h2>
+            <ol>
+                <li>Mezcla todos los ingredientes en un bol grande hasta que no quede harina seca. Deja reposar 30 minutos.</li>
+                <li>Realiza 3 tandas de estirados y pliegues, con 30 minutos de reposo entre cada una.</li>
+                <li>Cubre el bol y deja fermentar en la nevera durante 2 días.</li>
+                <li>Saca la masa de la nevera, divídela en dos y coloca cada porción en un molde de horno engrasado. Deja atemperar y fermentar a temperatura ambiente durante 2 horas.</li>
+                <li>Precalienta el horno al máximo con ventilador. Hornea unos 20 minutos hasta que esté dorada.</li>
+            </ol>
+        </section>
+
+        <section class="fillings">
+            <h2>Rellenos</h2>
+
+            <h3>Focaccia de jamón y rúcula con crema de parmesano</h3>
+
+            <h4>Crema de parmesano</h4>
+            <ul class="checklist" data-recipe="focaccia-parmesano">
+                <li><label><input type="checkbox">10g de mantequilla</label></li>
+                <li><label><input type="checkbox">10g de harina</label></li>
+                <li><label><input type="checkbox">200ml de leche entera</label></li>
+                <li><label><input type="checkbox">80g de parmesano rallado</label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('focaccia-parmesano')">Limpiar lista</button>
+            <ol>
+                <li>Derrite la mantequilla en una sartén a fuego medio y añade la harina. Tuesta un par de minutos removiendo constantemente.</li>
+                <li>Incorpora la leche poco a poco sin dejar de remover hasta obtener una crema espesa.</li>
+                <li>Añade el parmesano y mezcla hasta que se funda. Pasa por la batidora para una textura más lisa.</li>
+            </ol>
+
+            <h4>Montaje</h4>
+            <ul class="checklist" data-recipe="focaccia-montaje">
+                <li><label><input type="checkbox">Crema de parmesano</label></li>
+                <li><label><input type="checkbox">Mozzarella</label></li>
+                <li><label><input type="checkbox">Aceite de oliva</label></li>
+                <li><label><input type="checkbox">Pimienta negra</label></li>
+                <li><label><input type="checkbox">Jamón cocido</label></li>
+                <li><label><input type="checkbox">Rúcula</label></li>
+                <li><label><input type="checkbox">Sal, vinagre y aceite (para aliñar la rúcula)</label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('focaccia-montaje')">Limpiar lista</button>
+            <ol>
+                <li>Corta la focaccia por la mitad horizontalmente.</li>
+                <li>Extiende una capa generosa de crema de parmesano en la base.</li>
+                <li>Añade mozzarella, un hilo de aceite y pimienta al gusto.</li>
+                <li>Coloca el jamón cocido.</li>
+                <li>Aliña la rúcula con aceite, sal y vinagre, y distribúyela por encima.</li>
+                <li>Finaliza con más crema de parmesano y cierra la focaccia.</li>
+            </ol>
+        </section>
+
+        <section class="references">
+            <h2>Referencias</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=uS0UxYmrDUc&t=629s">Receta original</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/checklist.js"></script>
+
+</body>
+
+</html>
