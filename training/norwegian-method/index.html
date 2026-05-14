@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Norwegian Training Method</title>
+    <meta name="description" content="The Norwegian training method for runners: high volume, lactate-controlled threshold work, and consistency over intensity.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../styles/training.css">
+
+    <style>
+        .intro-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+            box-shadow: var(--shadow);
+        }
+
+        .intro-card p {
+            margin: 0 0 var(--space) 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .principle-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--shadow);
+            transition: all 0.2s ease;
+        }
+
+        .principle-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .principle-card h3 {
+            margin: 0 0 var(--space) 0;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .principle-card h3::before {
+            content: '';
+            width: 4px;
+            height: 1.125rem;
+            background: var(--primary);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .principle-card p {
+            margin: 0 0 var(--space-sm) 0;
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        .principle-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .principle-card ul {
+            margin: var(--space-sm) 0 var(--space) 0;
+            padding-left: var(--space-lg);
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        .principle-card li {
+            margin-bottom: var(--space-xs);
+        }
+
+        .lactate-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            margin-top: var(--space);
+        }
+
+        .lactate-table th {
+            text-align: left;
+            padding: var(--space-sm) var(--space);
+            background: var(--gray-50);
+            border-bottom: 2px solid var(--border);
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .lactate-table td {
+            padding: var(--space-sm) var(--space);
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-primary);
+        }
+
+        .lactate-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .lactate-table .zone-easy { color: var(--recovery); font-weight: 500; }
+        .lactate-table .zone-threshold { color: var(--accent); font-weight: 500; }
+        .lactate-table .zone-avoid { color: var(--danger); font-weight: 500; }
+
+        .workout-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .workout-card h3 {
+            margin: 0 0 var(--space-xs) 0;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .workout-subtitle {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .workout-description {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-lg);
+        }
+
+        .pace-target {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 0.25rem 0.625rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-right: var(--space-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .hr-target {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 0.25rem 0.625rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--danger);
+            margin-right: var(--space-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .targets-row {
+            margin-bottom: var(--space);
+        }
+
+        .weekly-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            margin-top: var(--space);
+        }
+
+        .weekly-table th {
+            text-align: left;
+            padding: var(--space-sm) var(--space);
+            background: var(--gray-50);
+            border-bottom: 2px solid var(--border);
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .weekly-table td {
+            padding: var(--space-sm) var(--space);
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-primary);
+            vertical-align: top;
+        }
+
+        .weekly-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .weekly-table td:first-child {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.8125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            width: 80px;
+        }
+
+        .session-threshold { color: var(--accent); font-weight: 500; }
+        .session-easy { color: var(--text-secondary); }
+        .session-long { color: var(--secondary); font-weight: 500; }
+        .session-recovery { color: var(--recovery); }
+
+        .volume-split {
+            display: flex;
+            gap: var(--space-lg);
+            margin-top: var(--space);
+        }
+
+        .volume-item {
+            flex: 1;
+            text-align: center;
+            padding: var(--space);
+            background: var(--gray-50);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .volume-pct {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .volume-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+        }
+
+        .callout {
+            background: rgba(37, 99, 235, 0.05);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-left: 4px solid var(--primary);
+            border-radius: var(--radius);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: var(--text-primary);
+        }
+
+        .warning-callout {
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-left: 4px solid var(--accent);
+            border-radius: var(--radius);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .section-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .section-icon {
+            font-size: 1.75rem;
+        }
+
+        .threshold-input-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: var(--space-xl);
+            align-items: flex-end;
+        }
+
+        .threshold-input-section .input-group {
+            flex: 1;
+        }
+
+        .threshold-input-section label {
+            display: block;
+            margin-bottom: var(--space-sm);
+            font-weight: 500;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .threshold-input-section input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-primary);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .threshold-input-section input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
+        }
+
+        .threshold-input-section input.invalid {
+            border-color: var(--danger);
+            box-shadow: 0 0 0 3px rgb(239 68 68 / 0.1);
+        }
+
+        .input-hint {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.375rem;
+        }
+
+        @media (max-width: 640px) {
+            .threshold-input-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="column" style="margin-top: 5%">
+                <a href="../" class="back-link">Training Plans</a>
+
+                <h1>🇳🇴 The Norwegian Training Method</h1>
+
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: var(--space-2xl); max-width: 680px; margin-left: auto; margin-right: auto;">
+                    An endurance training approach built on high aerobic volume, frequent lactate-controlled threshold work, and relentless consistency. Made famous by athletes like Jakob Ingebrigtsen.
+                </p>
+
+                <!-- Core Philosophy -->
+                <div class="intro-card">
+                    <p>The Norwegian method is not about training harder — it's about training <strong>more sustainably</strong>. By keeping easy runs genuinely easy and threshold sessions carefully controlled, you accumulate far more quality aerobic work than you could with a high-intensity, boom-and-bust approach.</p>
+                    <p>The result: better lactate clearance, higher aerobic power, and the ability to sustain fast paces that feel aerobic rather than anaerobic.</p>
+                </div>
+
+                <!-- Threshold Configuration -->
+                <div class="threshold-input-section">
+                    <div class="input-group">
+                        <label for="threshold-pace">Your Threshold Pace</label>
+                        <input type="text" id="threshold-pace" value="4:14" placeholder="4:14" autocomplete="off">
+                        <p class="input-hint">Format: M:SS per km (e.g. 4:14)</p>
+                    </div>
+                    <div class="input-group">
+                        <label for="threshold-hr">Your Threshold HR</label>
+                        <input type="number" id="threshold-hr" value="170" min="100" max="220">
+                        <p class="input-hint">In bpm (from Garmin, Polar, or a field test)</p>
+                    </div>
+                </div>
+
+                <!-- Core Principles -->
+                <div class="section-header">
+                    <span class="section-icon">📐</span>
+                    <h2>Core Principles</h2>
+                </div>
+
+                <div class="principle-card">
+                    <h3>1. Mostly Easy Running</h3>
+                    <p>The vast majority of weekly mileage is done at low intensity — conversational pace, low lactate accumulation.</p>
+                    <div class="volume-split">
+                        <div class="volume-item">
+                            <span class="volume-pct">80–90%</span>
+                            <span class="volume-label">Easy (Zone 1–2)</span>
+                        </div>
+                        <div class="volume-item">
+                            <span class="volume-pct" style="color: var(--accent);">10–20%</span>
+                            <span class="volume-label">Moderate / Hard</span>
+                        </div>
+                    </div>
+                    <p style="margin-top: var(--space);">This builds aerobic capacity, mitochondrial density, running economy, and the ability to recover and repeat quality sessions week after week.</p>
+                </div>
+
+                <div class="principle-card">
+                    <h3>2. Threshold Training Is the Centerpiece</h3>
+                    <p>Rather than a few brutal workouts, the Norwegian method uses frequent, <em>controlled</em> threshold sessions. The goal is to stay near lactate threshold without going deeply anaerobic.</p>
+
+                    <table class="lactate-table">
+                        <thead>
+                            <tr>
+                                <th>Zone</th>
+                                <th>Effort</th>
+                                <th>Lactate</th>
+                                <th>Target?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="zone-easy">Easy</td>
+                                <td>Conversational</td>
+                                <td>~1–2 mmol/L</td>
+                                <td>Most of your volume</td>
+                            </tr>
+                            <tr>
+                                <td class="zone-threshold">Threshold</td>
+                                <td>Comfortably hard</td>
+                                <td>~2–4 mmol/L</td>
+                                <td>Key workout zone</td>
+                            </tr>
+                            <tr>
+                                <td class="zone-avoid">Above threshold</td>
+                                <td>Hard / racing</td>
+                                <td>&gt;4 mmol/L</td>
+                                <td>Avoid in most sessions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="callout" style="margin-bottom: 0;">
+                        Train hard enough to stimulate adaptation — but easy enough to recover quickly and repeat often.
+                    </div>
+                </div>
+
+                <div class="principle-card">
+                    <h3>3. Double Threshold Days (Advanced)</h3>
+                    <p>The most famous element: elite athletes may perform a threshold session in the morning and another in the evening. These are <strong>not</strong> all-out efforts — both remain controlled.</p>
+                    <p>Example double threshold day:</p>
+                    <ul>
+                        <li><strong>AM:</strong> 5 × 6 min at threshold with 1 min jog</li>
+                        <li><strong>PM:</strong> 10 × 1 km at threshold with 1 min jog</li>
+                    </ul>
+                    <div class="warning-callout">
+                        Double threshold days are for elite or highly trained runners. At recreational volumes (40–60 km/week), a single well-executed threshold session per week delivers most of the benefit.
+                    </div>
+                </div>
+
+                <div class="principle-card">
+                    <h3>4. No "Hero Workouts"</h3>
+                    <p>The method deliberately avoids frequent maximal intervals, exhaustive VO₂max sessions, or racing in training. Hard sessions are used <em>strategically</em>, not habitually.</p>
+                    <p>The philosophy: <strong>consistency and repeatability beat sporadic extreme efforts</strong>. Small sustainable stress, repeated over months and years, compounds into fitness.</p>
+                </div>
+
+                <!-- Your Threshold Reference -->
+                <div class="section-header">
+                    <span class="section-icon">🎯</span>
+                    <h2>Your Threshold Reference</h2>
+                </div>
+
+                <div class="principle-card">
+                    <h3>Lactate Threshold Targets</h3>
+                    <p>All threshold work should be anchored to your threshold values. For Norwegian-style training, aim to stay <em>at or slightly below</em> — not faster. The trap is drifting toward 5K effort.</p>
+                    <div class="targets-row" style="margin-top: var(--space);">
+                        <span class="pace-target" id="pace-badge">4:14 /km pace</span>
+                        <span class="hr-target" id="hr-badge">170 bpm HR</span>
+                    </div>
+
+                    <table class="lactate-table">
+                        <thead>
+                            <tr>
+                                <th>Session Type</th>
+                                <th>Target Pace</th>
+                                <th>Target HR</th>
+                                <th>Feel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Longer threshold reps</td>
+                                <td id="tbl-longer-pace">4:18–4:20 /km</td>
+                                <td id="tbl-longer-hr">163–170 bpm</td>
+                                <td>Controlled, stable breathing</td>
+                            </tr>
+                            <tr>
+                                <td>Kilometer repeats</td>
+                                <td id="tbl-km-pace">4:12–4:16 /km</td>
+                                <td id="tbl-km-hr">165–172 bpm</td>
+                                <td>Comfortably hard</td>
+                            </tr>
+                            <tr>
+                                <td>Light secondary session</td>
+                                <td id="tbl-light-pace">4:22–4:28 /km</td>
+                                <td id="tbl-light-hr">158–165 bpm</td>
+                                <td>Smooth, relaxed</td>
+                            </tr>
+                            <tr>
+                                <td>Easy / long runs</td>
+                                <td id="tbl-easy-pace">5:00–5:40 /km</td>
+                                <td id="tbl-easy-hr">&lt;145 bpm</td>
+                                <td>Truly conversational</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="callout" style="margin-bottom: 0;">
+                        <strong>HR cardiac drift is normal.</strong> In a threshold session, HR typically rises from the 160s in rep 1 to your threshold by the last rep. What you want to avoid: early spikes above <span id="cardiac-spike">175</span> bpm or dramatic pace fade.
+                    </div>
+                </div>
+
+                <!-- Workouts -->
+                <div class="section-header">
+                    <span class="section-icon">⚡</span>
+                    <h2>Threshold Workouts</h2>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
+                    Ready-to-use sessions. The Intervals.icu code can be pasted directly into the Workout Builder text editor. Using <code style="background: var(--gray-100); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.8125rem;">98-100% Pace</code> targets automatically scale if your threshold changes.
+                </p>
+
+                <!-- Workout 1 -->
+                <div class="workout-card">
+                    <h3>Workout 1 — Cruise Intervals</h3>
+                    <p class="workout-subtitle">Best starting point · 30 min of quality threshold work</p>
+                    <p class="workout-description">
+                        The classic Norwegian-style session. Short enough recovery to accumulate aerobic stimulus; long enough reps to develop threshold comfort. Finish feeling like you could do one more.
+                    </p>
+                    <div class="targets-row">
+                        <span class="pace-target" id="w1-pace">4:18–4:14 /km</span>
+                        <span class="hr-target" id="w1-hr">165–170 bpm</span>
+                    </div>
+
+                    <button class="intervals-toggle" onclick="toggleIntervals(this)">Intervals.icu Workout</button>
+                    <div class="intervals-content">
+                        <div class="intervals-day">
+                            <div class="intervals-day-header">
+                                <span class="intervals-day-title">Paste into Workout Builder</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="intervals-code">Warm Up
+- 15m Z2 Pace
+
+Main Set 5x
+- 6m 98-100% Pace
+- 1m easy
+
+Cool Down
+- 10m easy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workout 2 -->
+                <div class="workout-card">
+                    <h3>Workout 2 — Threshold Kilometer Repeats</h3>
+                    <p class="workout-subtitle">Classic Norwegian structure · 6 km of threshold work</p>
+                    <p class="workout-description">
+                        More interval-like in feel but still controlled. The key: do not run these at 5K pace. Recovery stays short and relaxed — it is not a full rest.
+                    </p>
+                    <div class="targets-row">
+                        <span class="pace-target" id="w2-pace">4:12–4:16 /km</span>
+                        <span class="hr-target" id="w2-hr">165–172 bpm</span>
+                    </div>
+
+                    <button class="intervals-toggle" onclick="toggleIntervals(this)">Intervals.icu Workout</button>
+                    <div class="intervals-content">
+                        <div class="intervals-day">
+                            <div class="intervals-day-header">
+                                <span class="intervals-day-title">Paste into Workout Builder</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="intervals-code">Warm Up
+- 15m Z2 Pace
+
+Main Set 6x
+- 1km 100-102% Pace
+- 1m easy
+
+Cool Down
+- 10m easy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workout 3 -->
+                <div class="workout-card">
+                    <h3>Workout 3 — Long Threshold Blocks</h3>
+                    <p class="workout-subtitle">Half marathon builder · 36 min of threshold work</p>
+                    <p class="workout-description">
+                        Slightly more mentally demanding. Develops the ability to sustain threshold effort for extended periods — particularly effective for half marathon preparation.
+                    </p>
+                    <div class="targets-row">
+                        <span class="pace-target" id="w3-pace">4:20 /km</span>
+                        <span class="hr-target" id="w3-hr">163–170 bpm</span>
+                    </div>
+
+                    <button class="intervals-toggle" onclick="toggleIntervals(this)">Intervals.icu Workout</button>
+                    <div class="intervals-content">
+                        <div class="intervals-day">
+                            <div class="intervals-day-header">
+                                <span class="intervals-day-title">Paste into Workout Builder</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="intervals-code">Warm Up
+- 15m Z2 Pace
+
+Main Set 3x
+- 12m 97-99% Pace
+- 2m easy
+
+Cool Down
+- 10m easy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workout 4 -->
+                <div class="workout-card">
+                    <h3>Workout 4 — Light Secondary Session</h3>
+                    <p class="workout-subtitle">For a second threshold day · Easy aerobic quality</p>
+                    <p class="workout-description">
+                        If you decide to add a second threshold stimulus during the week, this should be the lighter of the two. It should feel smooth and relaxed — not a second hard workout.
+                    </p>
+                    <div class="targets-row">
+                        <span class="pace-target" id="w4-pace">4:22–4:28 /km</span>
+                        <span class="hr-target" id="w4-hr">158–165 bpm</span>
+                    </div>
+
+                    <button class="intervals-toggle" onclick="toggleIntervals(this)">Intervals.icu Workout</button>
+                    <div class="intervals-content">
+                        <div class="intervals-day">
+                            <div class="intervals-day-header">
+                                <span class="intervals-day-title">Paste into Workout Builder</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="intervals-code">Warm Up
+- 15m easy
+
+Main Set 10x
+- 1m 95-98% Pace
+- 1m easy
+
+Cool Down
+- 10m easy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Structure -->
+                <div class="section-header">
+                    <span class="section-icon">📅</span>
+                    <h2>Weekly Structure</h2>
+                </div>
+
+                <div class="principle-card">
+                    <h3>Recommended Setup (40–50 km/week)</h3>
+                    <p>At your current volume, one well-executed threshold session per week delivers the core benefit. A second lighter session can be added once recovery feels consistent.</p>
+
+                    <table class="weekly-table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Session</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mon</td>
+                                <td class="session-easy">Easy 8–10 km</td>
+                            </tr>
+                            <tr>
+                                <td>Tue</td>
+                                <td class="session-threshold">Threshold workout (Workouts 1–3)</td>
+                            </tr>
+                            <tr>
+                                <td>Wed</td>
+                                <td class="session-easy">Easy</td>
+                            </tr>
+                            <tr>
+                                <td>Thu</td>
+                                <td class="session-easy">Easy + strides</td>
+                            </tr>
+                            <tr>
+                                <td>Fri</td>
+                                <td class="session-recovery">Easy or optional light session</td>
+                            </tr>
+                            <tr>
+                                <td>Sat</td>
+                                <td class="session-long">Long run (easy pace)</td>
+                            </tr>
+                            <tr>
+                                <td>Sun</td>
+                                <td class="session-recovery">Recovery or rest</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="principle-card" style="margin-top: var(--space-lg);">
+                    <h3>With Two Threshold Sessions</h3>
+                    <p>If recovery is consistently good after 4–6 weeks, a second lighter threshold stimulus can be added. Keep it clearly easier than the main session.</p>
+
+                    <table class="weekly-table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Session</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mon</td>
+                                <td class="session-easy">Easy</td>
+                            </tr>
+                            <tr>
+                                <td>Tue</td>
+                                <td class="session-threshold">Main threshold (e.g. Workout 1 or 2)</td>
+                            </tr>
+                            <tr>
+                                <td>Wed</td>
+                                <td class="session-easy">Easy</td>
+                            </tr>
+                            <tr>
+                                <td>Thu</td>
+                                <td class="session-threshold">Light threshold (Workout 4)</td>
+                            </tr>
+                            <tr>
+                                <td>Fri</td>
+                                <td class="session-easy">Easy</td>
+                            </tr>
+                            <tr>
+                                <td>Sat</td>
+                                <td class="session-long">Long run</td>
+                            </tr>
+                            <tr>
+                                <td>Sun</td>
+                                <td class="session-recovery">Recovery</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Signs of Success -->
+                <div class="section-header">
+                    <span class="section-icon">✅</span>
+                    <h2>Feedback Signals</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-2xl);">
+                    <div class="note" style="border-left-color: var(--secondary); margin-top: 0;">
+                        <h4>Signs it's working</h4>
+                        <ul>
+                            <li>Recover within 24 hours</li>
+                            <li>Easy runs still feel easy</li>
+                            <li>Same pace at lower HR over time</li>
+                            <li>Consistent week-to-week</li>
+                        </ul>
+                    </div>
+                    <div class="note" style="border-left-color: var(--danger); margin-top: 0;">
+                        <h4>Signs to back off</h4>
+                        <ul>
+                            <li>Legs heavy all week</li>
+                            <li>Easy pace drifting slower</li>
+                            <li>Needing long recovery after sessions</li>
+                            <li>Turning threshold into a race</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Intervals.icu Setup -->
+                <div class="section-header">
+                    <span class="section-icon">⚙️</span>
+                    <h2>Intervals.icu Setup</h2>
+                </div>
+
+                <div class="principle-card">
+                    <h3>Configure Your Threshold</h3>
+                    <p>Set your threshold values in Intervals.icu so workouts automatically scale as your fitness improves:</p>
+                    <ol style="margin: var(--space-sm) 0; padding-left: var(--space-lg); color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.8;">
+                        <li>Go to <strong>Settings → Running</strong></li>
+                        <li>Set <strong>Threshold Pace</strong> = <span id="setup-pace">4:14</span>/km</li>
+                        <li>Set <strong>Threshold HR</strong> = <span id="setup-hr">170</span> bpm</li>
+                    </ol>
+                    <p>Intervals.icu will then calculate pace zones and threshold percentages automatically. The workout builder syntax like <code style="background: var(--gray-100); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.8125rem;">98-100% Pace</code> scales relative to this value — so if your threshold improves, all your workouts update too.</p>
+
+                    <div class="callout" style="margin-bottom: 0;">
+                        <strong>Garmin sync:</strong> Workouts can be pushed directly to your Garmin device via the Intervals.icu ↔ Garmin integration. See the <a href="../intervals-cheat-sheet/" style="color: var(--primary); text-decoration: none;">Intervals.icu Cheat Sheet</a> for the full workout builder syntax reference.
+                    </div>
+                </div>
+
+                <div class="note" style="margin-top: var(--space-2xl);">
+                    <h4>The Core Idea</h4>
+                    <p>Most runners improve not by training harder, but by training <strong>more consistently and more sustainably</strong>. The Norwegian method's biggest insight is that controlled threshold work — done often and repeated week after week — outperforms occasional all-out efforts.</p>
+                    <p style="margin-bottom: 0;">At 40–50 km/week: start with 1 threshold session per week, keep everything else genuinely easy, and let the volume do the work.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function paceToSecs(str) {
+            const parts = str.trim().split(':');
+            if (parts.length !== 2) return null;
+            const m = parseInt(parts[0], 10);
+            const s = parseInt(parts[1], 10);
+            if (isNaN(m) || isNaN(s) || s < 0 || s > 59 || m < 0) return null;
+            return m * 60 + s;
+        }
+
+        function secsToStr(secs) {
+            secs = Math.max(0, Math.round(secs));
+            const m = Math.floor(secs / 60);
+            const s = secs % 60;
+            return `${m}:${s.toString().padStart(2, '0')}`;
+        }
+
+        function setText(id, val) {
+            const el = document.getElementById(id);
+            if (el) el.textContent = val;
+        }
+
+        function update() {
+            const paceInput = document.getElementById('threshold-pace');
+            const hrInput = document.getElementById('threshold-hr');
+
+            const paceSecs = paceToSecs(paceInput.value);
+            const hr = parseInt(hrInput.value, 10);
+
+            const paceValid = paceSecs !== null && paceSecs > 0;
+            const hrValid = !isNaN(hr) && hr >= 100 && hr <= 220;
+
+            paceInput.classList.toggle('invalid', !paceValid);
+            hrInput.classList.toggle('invalid', !hrValid);
+
+            if (!paceValid || !hrValid) return;
+
+            localStorage.setItem('norw-threshold-pace', paceInput.value.trim());
+            localStorage.setItem('norw-threshold-hr', hr);
+
+            // Header badges
+            setText('pace-badge', `${secsToStr(paceSecs)} /km pace`);
+            setText('hr-badge', `${hr} bpm HR`);
+
+            // Reference table — pace offsets in seconds, HR as % of threshold
+            setText('tbl-longer-pace', `${secsToStr(paceSecs + 4)}–${secsToStr(paceSecs + 6)} /km`);
+            setText('tbl-longer-hr', `${Math.round(hr * 0.96)}–${hr} bpm`);
+            setText('tbl-km-pace', `${secsToStr(paceSecs - 2)}–${secsToStr(paceSecs + 2)} /km`);
+            setText('tbl-km-hr', `${Math.round(hr * 0.97)}–${Math.round(hr * 1.01)} bpm`);
+            setText('tbl-light-pace', `${secsToStr(paceSecs + 8)}–${secsToStr(paceSecs + 14)} /km`);
+            setText('tbl-light-hr', `${Math.round(hr * 0.93)}–${Math.round(hr * 0.97)} bpm`);
+            setText('tbl-easy-pace', `${secsToStr(paceSecs + 46)}–${secsToStr(paceSecs + 86)} /km`);
+            document.getElementById('tbl-easy-hr').textContent = `<${Math.round(hr * 0.853)} bpm`;
+
+            // Cardiac drift spike warning
+            setText('cardiac-spike', Math.round(hr * 1.03));
+
+            // Workout badges
+            setText('w1-pace', `${secsToStr(paceSecs + 4)}–${secsToStr(paceSecs)} /km`);
+            setText('w1-hr', `${Math.round(hr * 0.97)}–${hr} bpm`);
+            setText('w2-pace', `${secsToStr(paceSecs - 2)}–${secsToStr(paceSecs + 2)} /km`);
+            setText('w2-hr', `${Math.round(hr * 0.97)}–${Math.round(hr * 1.01)} bpm`);
+            setText('w3-pace', `${secsToStr(paceSecs + 6)} /km`);
+            setText('w3-hr', `${Math.round(hr * 0.96)}–${hr} bpm`);
+            setText('w4-pace', `${secsToStr(paceSecs + 8)}–${secsToStr(paceSecs + 14)} /km`);
+            setText('w4-hr', `${Math.round(hr * 0.93)}–${Math.round(hr * 0.97)} bpm`);
+
+            // Intervals.icu setup values
+            setText('setup-pace', secsToStr(paceSecs));
+            setText('setup-hr', hr);
+        }
+
+        function toggleIntervals(btn) {
+            btn.classList.toggle('active');
+            btn.nextElementSibling.classList.toggle('show');
+        }
+
+        function copyCode(btn) {
+            const codeEl = btn.closest('.intervals-day').querySelector('.intervals-code');
+            navigator.clipboard.writeText(codeEl.textContent.trim()).then(() => {
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedPace = localStorage.getItem('norw-threshold-pace');
+            const savedHr = localStorage.getItem('norw-threshold-hr');
+            if (savedPace) document.getElementById('threshold-pace').value = savedPace;
+            if (savedHr) document.getElementById('threshold-hr').value = savedHr;
+
+            update();
+
+            document.getElementById('threshold-pace').addEventListener('input', update);
+            document.getElementById('threshold-hr').addEventListener('input', update);
+        });
+    </script>
+</body>
+
+</html>
