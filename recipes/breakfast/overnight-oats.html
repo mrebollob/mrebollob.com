@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overnight Oats</title>
+    <link rel="stylesheet" href="../css/recipes-styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-title">Overnight Oats</a>
+            <button class="dark-mode-toggle" id="toggle-theme" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="ingredients">
+            <h2>Ingredientes</h2>
+            <ul class="checklist" data-recipe="overnight-oats">
+                <li><label><input type="checkbox">⅔ cup rolled oats</label></li>
+                <li><label><input type="checkbox">1 tbsp chia seeds</label></li>
+                <li><label><input type="checkbox">⅔ cup whole milk</label></li>
+                <li><label><input type="checkbox">¼ cup plain Greek yogurt</label></li>
+                <li><label><input type="checkbox">1 tbsp maple syrup</label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('overnight-oats')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <h2>Instrucciones</h2>
+            <ol>
+                <li>In a 16oz wide-mouth mason jar (or similar container), combine all ingredients.</li>
+                <li>Stir thoroughly until fully combined.</li>
+                <li>Wipe the rim clean, seal, and refrigerate overnight.</li>
+                <li>Next morning, stir again. If too thick, add a teaspoon or two of milk and mix.</li>
+            </ol>
+        </section>
+
+        <section class="references">
+            <h2>Notas</h2>
+            <ul>
+                <li>Use rolled oats, not steel-cut — steel-cut need multiple nights to soften.</li>
+                <li>Flavored yogurt works; vanilla can be overpowering.</li>
+                <li>Lower-fat yogurt gives a thinner result; reduce milk slightly to compensate.</li>
+                <li>Honey, brown sugar, or sugar-free alternatives all work as sweetener.</li>
+                <li>Keeps until end of week if sealed; quality declines after 5 days as oats get mushy.</li>
+                <li><a href="https://ianfujimoto.substack.com/p/the-healthy-way-to-eat-dessert-for">Receta original</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/checklist.js"></script>
+
+</body>
+
+</html>
