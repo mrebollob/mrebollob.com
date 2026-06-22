@@ -19,20 +19,24 @@
     </header>
 
     <div class="container">
+
+        <!-- BASE RECIPE -->
+        <h2>Base Recipe</h2>
+
         <section class="ingredients">
-            <h2>Ingredientes</h2>
-            <ul class="checklist" data-recipe="overnight-oats">
+            <h3>Ingredientes</h3>
+            <ul class="checklist" data-recipe="overnight-oats-base">
                 <li><label><input type="checkbox">⅔ cup rolled oats</label></li>
-                <li><label><input type="checkbox">1 tbsp chia seeds</label></li>
                 <li><label><input type="checkbox">⅔ cup whole milk</label></li>
-                <li><label><input type="checkbox">¼ cup plain Greek yogurt</label></li>
-                <li><label><input type="checkbox">1 tbsp maple syrup</label></li>
+                <li><label><input type="checkbox">¼ cup Greek yogurt (5% fat)</label></li>
+                <li><label><input type="checkbox">1 tbsp chia seeds</label></li>
+                <li><label><input type="checkbox">1 tbsp maple syrup, honey, or brown sugar</label></li>
             </ul>
-            <button class="clear-checklist" onclick="clearChecklist('overnight-oats')">Limpiar lista</button>
+            <button class="clear-checklist" onclick="clearChecklist('overnight-oats-base')">Limpiar lista</button>
         </section>
 
         <section class="instructions">
-            <h2>Instrucciones</h2>
+            <h3>Instrucciones</h3>
             <ol>
                 <li>In a 16oz wide-mouth mason jar (or similar container), combine all ingredients.</li>
                 <li>Stir thoroughly until fully combined.</li>
@@ -42,16 +46,172 @@
         </section>
 
         <section class="references">
-            <h2>Notas</h2>
+            <h3>Notas</h3>
             <ul>
                 <li>Use rolled oats, not steel-cut — steel-cut need multiple nights to soften.</li>
                 <li>Flavored yogurt works; vanilla can be overpowering.</li>
                 <li>Lower-fat yogurt gives a thinner result; reduce milk slightly to compensate.</li>
-                <li>Honey, brown sugar, or sugar-free alternatives all work as sweetener.</li>
                 <li>Keeps until end of week if sealed; quality declines after 5 days as oats get mushy.</li>
+            </ul>
+        </section>
+
+        <hr />
+
+        <!-- VARIATIONS -->
+        <h2>Variations</h2>
+
+        <!-- Peanut Butter Cup -->
+        <h3>Peanut Butter Cup</h3>
+
+        <section class="ingredients">
+            <ul class="checklist" data-recipe="overnight-oats-pbc">
+                <li><label><input type="checkbox">⅔ cup rolled oats</label></li>
+                <li><label><input type="checkbox">⅔ cup whole milk</label></li>
+                <li><label><input type="checkbox">¼ cup Greek yogurt</label></li>
+                <li><label><input type="checkbox">1 tbsp chia seeds</label></li>
+                <li><label><input type="checkbox">1 tbsp maple syrup</label></li>
+                <li><label><input type="checkbox">1½ tbsp peanut butter</label></li>
+                <li><label><input type="checkbox">2 tsp cocoa powder</label></li>
+                <li><label><input type="checkbox">1 tsp warm water</label></li>
+                <li><label><input type="checkbox">Small pinch of salt</label></li>
+                <li><label><input type="checkbox">1 tbsp mini chocolate chips (mix in + topping)</label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('overnight-oats-pbc')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <ol>
+                <li>Mix all ingredients together.</li>
+                <li>Seal and refrigerate overnight.</li>
+            </ol>
+        </section>
+
+        <hr />
+
+        <!-- Mocha Latte (minus the Mocha) -->
+        <h3>Mocha Latte (minus the Mocha)</h3>
+
+        <section class="ingredients">
+            <ul class="checklist" data-recipe="overnight-oats-mocha">
+                <li><label><input type="checkbox">⅔ cup rolled oats</label></li>
+                <li><label><input type="checkbox">⅔ cup whole milk</label></li>
+                <li><label><input type="checkbox">¼ cup Greek yogurt</label></li>
+                <li><label><input type="checkbox">1 tbsp chia seeds</label></li>
+                <li><label><input type="checkbox">Maple syrup, to taste</label></li>
+                <li><label><input type="checkbox">1 tsp cocoa powder</label></li>
+                <li><label><input type="checkbox">½ tsp vanilla extract</label></li>
+                <li><label><input type="checkbox">2 tbsp Greek yogurt <em>(topping)</em></label></li>
+                <li><label><input type="checkbox">¼ tsp vanilla extract <em>(topping)</em></label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('overnight-oats-mocha')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <ol>
+                <li>Mix the oats, milk, ¼ cup yogurt, chia seeds, maple syrup, cocoa powder, and ½ tsp vanilla together.</li>
+                <li>Separately, mix the 2 tbsp yogurt with ¼ tsp vanilla — this is the topping.</li>
+                <li>Seal the jar and refrigerate overnight.</li>
+                <li>Next morning, add the vanilla yogurt on top before serving.</li>
+            </ol>
+        </section>
+
+        <hr />
+
+        <!-- Banana Bread -->
+        <h3>Banana Bread</h3>
+
+        <section class="ingredients">
+            <ul class="checklist" data-recipe="overnight-oats-banana">
+                <li><label><input type="checkbox">⅔ cup rolled oats</label></li>
+                <li><label><input type="checkbox">⅔ cup whole milk</label></li>
+                <li><label><input type="checkbox">¼ cup Greek yogurt</label></li>
+                <li><label><input type="checkbox">1 tbsp chia seeds</label></li>
+                <li><label><input type="checkbox">1 tbsp honey</label></li>
+                <li><label><input type="checkbox">½ ripe banana, mashed (mix in)</label></li>
+                <li><label><input type="checkbox">¼ tsp ground cinnamon</label></li>
+                <li><label><input type="checkbox">⅛ tsp ground nutmeg</label></li>
+                <li><label><input type="checkbox">½ banana, chopped <em>(topping)</em></label></li>
+                <li><label><input type="checkbox">Crushed walnuts or pecans <em>(topping)</em></label></li>
+                <li><label><input type="checkbox">Mini chocolate chips, optional <em>(topping)</em></label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('overnight-oats-banana')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <ol>
+                <li>Mix oats, milk, yogurt, chia seeds, honey, mashed banana half, cinnamon, and nutmeg together.</li>
+                <li>Seal and refrigerate overnight.</li>
+                <li>Next morning, top with the chopped banana half, crushed nuts, and mini chocolate chips if using.</li>
+            </ol>
+        </section>
+
+        <hr />
+
+        <!-- Peanut Butter and Jelly -->
+        <h3>Peanut Butter and Jelly</h3>
+
+        <section class="ingredients">
+            <ul class="checklist" data-recipe="overnight-oats-pbj">
+                <li><label><input type="checkbox">⅔ cup rolled oats</label></li>
+                <li><label><input type="checkbox">⅔ cup whole milk</label></li>
+                <li><label><input type="checkbox">¼ cup Greek yogurt</label></li>
+                <li><label><input type="checkbox">1 tbsp chia seeds</label></li>
+                <li><label><input type="checkbox">1 tbsp honey</label></li>
+                <li><label><input type="checkbox">1½ tbsp strawberry jam (jam's better than jelly)</label></li>
+                <li><label><input type="checkbox">1½ tbsp creamy peanut butter</label></li>
+                <li><label><input type="checkbox">Crushed peanuts <em>(topping)</em></label></li>
+                <li><label><input type="checkbox">Chopped strawberries <em>(topping)</em></label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('overnight-oats-pbj')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <ol>
+                <li>Mix all ingredients except the toppings together.</li>
+                <li>Seal and refrigerate overnight.</li>
+                <li>Next morning, top with crushed peanuts and chopped strawberries.</li>
+            </ol>
+        </section>
+
+        <hr />
+
+        <!-- Dark Chocolate Delight -->
+        <h3>Dark Chocolate Delight</h3>
+
+        <section class="ingredients">
+            <ul class="checklist" data-recipe="overnight-oats-choco">
+                <li><label><input type="checkbox">⅔ cup rolled oats</label></li>
+                <li><label><input type="checkbox">⅔ cup whole milk</label></li>
+                <li><label><input type="checkbox">¼ cup Greek yogurt</label></li>
+                <li><label><input type="checkbox">1 tbsp chia seeds</label></li>
+                <li><label><input type="checkbox">1 tbsp honey or maple syrup</label></li>
+                <li><label><input type="checkbox">1¼ tbsp cocoa powder</label></li>
+                <li><label><input type="checkbox">¼ tsp vanilla extract</label></li>
+                <li><label><input type="checkbox">15 g dark chocolate, finely minced</label></li>
+                <li><label><input type="checkbox">½ tsp flaky sea salt</label></li>
+                <li><label><input type="checkbox">5–6 raspberries, crushed <em>(topping)</em></label></li>
+                <li><label><input type="checkbox">Shaved chocolate <em>(topping)</em></label></li>
+            </ul>
+            <button class="clear-checklist" onclick="clearChecklist('overnight-oats-choco')">Limpiar lista</button>
+        </section>
+
+        <section class="instructions">
+            <ol>
+                <li>Mix all ingredients except the toppings together.</li>
+                <li>Seal and refrigerate overnight.</li>
+                <li>Next morning, top with crushed raspberries and shaved chocolate.</li>
+            </ol>
+        </section>
+
+        <hr />
+
+        <section class="references">
+            <h3>Referencias</h3>
+            <ul>
                 <li><a href="https://ianfujimoto.substack.com/p/the-healthy-way-to-eat-dessert-for">Receta original</a></li>
             </ul>
         </section>
+
     </div>
 
     <script src="../scripts/theme.js"></script>
